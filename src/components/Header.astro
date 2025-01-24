@@ -4,33 +4,83 @@ import { Image } from "astro:assets";
 import logoBlack from "../assets/logo_black.svg";
 import logoWhite from "../assets/logo_white.svg";
 
+import NavigationMenu from "./NavigationMenu.jsx";
 import Button from "../components/Button.astro";
 
 const { type, btnText } = Astro.props;
+const sub = [
+    {
+        title: "Branding, Creatività & Design",
+        href: "/servizi/creativita-branding",
+        description:
+            "Creiamo identità visive uniche e soluzioni creative su misura.",
+    },
+    {
+        title: "Software su misura",
+        href: "/servizi/software-su-misura",
+        description:
+            "Sviluppiamo software personalizzati per soddisfare le esigenze specifiche.",
+    },
+    {
+        title: "Intelligenza artificiale",
+        href: "/servizi/intelligenza-artificiale",
+        description:
+            "Integriamo l'intelligenza artificiale per ottimizzare processi e operazioni.",
+    },
+    {
+        title: "Siti web & E-commerce",
+        href: "/servizi/siti-web-e-commerce",
+        description:
+            "Progettiamo siti web ed e-commerce facili da usare e scalabili.",
+    },
+    {
+        title: "Landing page",
+        href: "/servizi/landing-page",
+        description:
+            "Realizziamo landing page ottimizzate per conversioni elevate.",
+    },
+    {
+        title: "Marketing",
+        href: "/servizi/marketing",
+        description:
+            "Strategie di marketing digitale per incrementare visibilità e engagement.",
+    },
+];
 ---
 
 <div class={`header ${type}`}>
+    <a href="/">
+        <Image
+            src={type == "dark" ? logoWhite : logoBlack}
+            alt="sohostudio logo black"
+            class="logo"
+        />
+    </a>
     <div class="menu">
-        <a href="/"
-            ><Image
-                src={type == "dark" ? logoWhite : logoBlack}
-                alt="sohostudio logo black"
-            /></a
-        >
-        <div class="item">servizi</div>
+        <div class="item">
+            <NavigationMenu item={"servizi"} sub={sub} client:load />
+        </div>
         <div class="item"><a href="/portfolio">portfolio</a></div>
+        <hr />
         <div class="item"><a href="/mission">valori</a></div>
         <div class="item"><a href="/team">chi siamo</a></div>
         <div class="item"><a href="/contatti">contatti</a></div>
     </div>
-    {btnText && <Button text={btnText} />}
+    {btnText && <Button>{btnText}</Button>}
 </div>
 
 <style>
+    hr {
+        opacity: 0.3;
+    }
+    .logo {
+        margin-top: 6px;
+    }
     .header {
         padding: 25px 0;
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
     button {
         background: #212121;
@@ -58,6 +108,7 @@ const { type, btnText } = Astro.props;
     }
     .dark .item a {
         color: #fff;
+        cursor: pointer;
     }
     .light .item a {
         color: #111;
@@ -71,5 +122,9 @@ const { type, btnText } = Astro.props;
     .item:hover,
     .item a:hover {
         opacity: 0.9;
+    }
+    .bg-popover {
+        background: #111;
+        opacity: 1;
     }
 </style>

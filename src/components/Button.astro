@@ -1,5 +1,5 @@
 ---
-const { text, size = "m", type = "cta" } = Astro.props;
+const { size = "m", type = "cta" } = Astro.props;
 
 /*
     - text
@@ -8,7 +8,7 @@ const { text, size = "m", type = "cta" } = Astro.props;
 */
 ---
 
-<button class={`${size} ${type}`}>{text}</button>
+<button class={`${size} ${type}`}><slot /></button>
 
 <style>
     button {
@@ -19,13 +19,20 @@ const { text, size = "m", type = "cta" } = Astro.props;
         padding: 12px 17px;
         font-size: 14px;
         font-weight: 700;
+        border-radius: 3px;
     }
     .l {
         font-size: 18px;
-        padding: 15px 30px;
+        padding: 15px 25px;
     }
     .m {
         font-size: 14px;
-        padding: 15px 20px;
+        padding: 13px 20px;
+    }
+    .cta {
+        background: #684ec5;
+    }
+    .secondary {
+        background: #111;
     }
 </style>

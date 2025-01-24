@@ -4,12 +4,9 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import HeroImg from "../assets/hero/home.png";
 import Logos from "../components/Logos.astro";
-import Doppelganger from "../assets/logos/doppel.png";
-import Makerfaire from "../assets/logos/maker.png";
-import Hoppipolla from "../assets/logos/hoppipolla.png";
-import Sello from "../assets/logos/sello.png";
-import Shampora from "../assets/logos/shampora.png";
-import Sisal from "../assets/logos/sisal.png";
+import Button from "../components/Button.astro";
+
+import "@/styles/globals.css";
 ---
 
 <Layout>
@@ -20,6 +17,7 @@ import Sisal from "../assets/logos/sisal.png";
             Diamo vita a soluzioni su misura per il tuo business: dalla
             tecnologia che semplifica all'estetica che fa la differenza.
         </p>
+        <Button size="l">Richiedi un preventivo gratuito</Button>
         <Image src={HeroImg} alt="A sphere of sohostudio." />
     </div>
     <Logos />
@@ -48,6 +46,7 @@ import Sisal from "../assets/logos/sisal.png";
         max-width: 420px;
         font-size: 20px;
         line-height: 30px;
+        margin-bottom: 40px;
     }
     .hero img {
         position: absolute;

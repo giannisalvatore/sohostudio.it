@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import HeroImg from "../assets/hero/home.png";
@@ -12,7 +13,7 @@ import HeroImg from "../assets/hero/home.png";
             Diamo vita a soluzioni su misura per il tuo business: dalla
             tecnologia che semplifica all'estetica che fa la differenza.
         </p>
-        <img src={HeroImg.src} />
+        <Image src={HeroImg} alt="A sphere of sohostudio." />
     </div>
 </Layout>
 

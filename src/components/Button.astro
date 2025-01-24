@@ -1,8 +1,14 @@
 ---
-const { text } = Astro.props;
+const { text, size = "m", type = "cta" } = Astro.props;
+
+/*
+    - text
+    - size (s, m, l, xl)
+    - type (cta, secondary, disabled)
+*/
 ---
 
-<button>{text}</button>
+<button class={`${size} ${type}`}>{text}</button>
 
 <style>
     button {
@@ -12,5 +18,14 @@ const { text } = Astro.props;
         color: #fff;
         padding: 12px 17px;
         font-size: 14px;
+        font-weight: 700;
+    }
+    .l {
+        font-size: 18px;
+        padding: 15px 30px;
+    }
+    .m {
+        font-size: 14px;
+        padding: 15px 20px;
     }
 </style>

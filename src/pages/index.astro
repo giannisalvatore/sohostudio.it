@@ -3,6 +3,13 @@ import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import HeroImg from "../assets/hero/home.png";
+
+import Doppelganger from "../assets/logos/doppel.png";
+import Makerfaire from "../assets/logos/maker.png";
+import Hoppipolla from "../assets/logos/hoppipolla.png";
+import Sello from "../assets/logos/sello.png";
+import Shampora from "../assets/logos/shampora.png";
+import Sisal from "../assets/logos/sisal.png";
 ---
 
 <Layout>
@@ -14,6 +21,17 @@ import HeroImg from "../assets/hero/home.png";
             tecnologia che semplifica all'estetica che fa la differenza.
         </p>
         <Image src={HeroImg} alt="A sphere of sohostudio." />
+    </div>
+    <div class="logos">
+        <p>abbiamo collaborato con</p>
+        <div class="list">
+            <Image src={Doppelganger} alt="Doppelganger logo" />
+            <Image src={Makerfaire} alt="Makerfaire logo" />
+            <Image src={Hoppipolla} alt="Hoppipolla logo" />
+            <Image src={Sello} alt="Sello logo" />
+            <Image src={Shampora} alt="Shampora logo" />
+            <Image src={Sisal} alt="Sisal logo" />
+        </div>
     </div>
 </Layout>
 
@@ -32,10 +50,11 @@ import HeroImg from "../assets/hero/home.png";
         max-width: 670px;
         line-height: 70px;
         padding-top: 80px;
+        margin-bottom: 30px;
     }
     .subtitle {
         color: #fff;
-        opacity: 0.8;
+        opacity: 0.6;
         max-width: 420px;
         font-size: 20px;
         line-height: 30px;
@@ -46,5 +65,25 @@ import HeroImg from "../assets/hero/home.png";
         right: 0;
         z-index: -1;
         opacity: 0.7;
+    }
+    .logos {
+        margin-top: 90px;
+    }
+    .logos p {
+        color: #fff;
+        opacity: 0.3;
+        text-align: center;
+    }
+    .logos .list {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: space-between;
+    }
+    .logos img {
+        max-width: 200px;
+        max-height: 35px;
+        height: auto;
+        width: auto;
     }
 </style>

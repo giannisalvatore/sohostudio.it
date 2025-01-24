@@ -10,12 +10,11 @@ const { light } = Astro.props;
 <div class={`header ${light}`}>
     <div class="menu">
         <img src={logoWhite.src} alt="sohostudio logo black" />
-        <div class="item">chi siamo</div>
         <div class="item">servizi</div>
-        <div class="item">portfolio</div>
-        <div class="item">team</div>
-        <div class="item">valori</div>
-        <div class="item">contatti</div>
+        <div class="item"><a href="/portfolio">portfolio</a></div>
+        <div class="item"><a href="/valori">valori</a></div>
+        <div class="item"><a href="/team">chi siamo</a></div>
+        <div class="item"><a href="/contatti">portfolio</a></div>
     </div>
     <Button text="Preventivo gratuito" />
 </div>
@@ -47,13 +46,18 @@ const { light } = Astro.props;
     .light {
         color: #111;
     }
+    .item a {
+        text-decoration: none;
+        color: #fff;
+    }
     .item {
         margin-top: 3px;
         opacity: 0.5;
         transition: 0.3s;
         cursor: pointer;
     }
-    .item:hover {
+    .item:hover,
+    .item a:hover {
         opacity: 0.9;
     }
 </style>

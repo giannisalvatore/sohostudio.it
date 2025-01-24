@@ -1,0 +1,58 @@
+---
+import logoBlack from "../assets/logo_black.svg";
+import logoWhite from "../assets/logo_white.svg";
+
+import Button from "../components/Button.astro";
+
+const { light } = Astro.props;
+---
+
+<div class={`header ${light}`}>
+    <div class="menu">
+        <img src={logoWhite.src} alt="sohostudio logo black" />
+        <div class="item">chi siamo</div>
+        <div class="item">servizi</div>
+        <div class="item">portfolio</div>
+        <div class="item">team</div>
+        <div class="item">valori</div>
+        <div class="item">contatti</div>
+    </div>
+    <Button text="Preventivo gratuito" />
+</div>
+
+<style>
+    .header {
+        padding: 20px 35px;
+        display: flex;
+        justify-content: space-between;
+    }
+    button {
+        background: #212121;
+        border: 0;
+        color: #fff;
+        padding: 10px 17px;
+    }
+    .menu {
+        display: flex;
+        gap: 28px;
+        align-items: center;
+
+        font-size: 14px;
+        letter-spacing: 0.2px;
+    }
+    .dark {
+        color: #fff;
+    }
+    .light {
+        color: #111;
+    }
+    .item {
+        margin-top: 3px;
+        opacity: 0.5;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+    .item:hover {
+        opacity: 0.9;
+    }
+</style>

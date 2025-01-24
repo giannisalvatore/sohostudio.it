@@ -1,0 +1,52 @@
+---
+import Header from "../components/Header.astro";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>sohostudio | Agenzia creativa e di sviluppo</title>
+    </head>
+    <body>
+        <slot />
+    </body>
+</html>
+
+<style>
+    html,
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+    @font-face {
+        font-family: "Satoshi";
+        src: url("/src/assets/fonts/Satoshi/Satoshi-Bold.woff2") format("woff2");
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Satoshi";
+        src: url("/src/assets/fonts/Satoshi/Satoshi-Medium.woff2")
+            format("woff2");
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Satoshi";
+        src: url("/src/assets/fonts/Satoshi/Satoshi-Regular.woff2")
+            format("woff2");
+        font-weight: 300;
+        font-style: normal;
+    }
+    body {
+        font-family: "Satoshi", sans-serif;
+    }
+    * {
+        font-family: "Satoshi", sans-serif;
+    }
+</style>

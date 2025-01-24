@@ -1,0 +1,23 @@
+---
+import Header from "../components/Header.astro";
+const { topTitle, title, subTitle, type, btnText } = Astro.props;
+---
+
+<div class="layout" type={type}>
+    <Header type={type} btnText={btnText} />
+    <div class="hero">
+        <h2 class="topTitle">{topTitle}</h2>
+        <h1 class="title">{title}</h1>
+        <p class="subTitle">{subTitle}</p>
+    </div>
+    <slot />
+</div>
+
+<style>
+    .dark {
+        color: #fff;
+    }
+    .light {
+        color: #111;
+    }
+</style>

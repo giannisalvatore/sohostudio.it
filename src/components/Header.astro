@@ -1,22 +1,29 @@
 ---
+import { Image } from "astro:assets";
+
 import logoBlack from "../assets/logo_black.svg";
 import logoWhite from "../assets/logo_white.svg";
 
 import Button from "../components/Button.astro";
 
-const { light } = Astro.props;
+const { type, btnText } = Astro.props;
 ---
 
-<div class={`header ${light}`}>
+<div class={`header ${type}`}>
     <div class="menu">
-        <img src={logoWhite.src} alt="sohostudio logo black" />
+        <a href="/"
+            ><Image
+                src={type == "dark" ? logoWhite : logoBlack}
+                alt="sohostudio logo black"
+            /></a
+        >
         <div class="item">servizi</div>
         <div class="item"><a href="/portfolio">portfolio</a></div>
-        <div class="item"><a href="/valori">valori</a></div>
+        <div class="item"><a href="/mission">valori</a></div>
         <div class="item"><a href="/team">chi siamo</a></div>
-        <div class="item"><a href="/contatti">portfolio</a></div>
+        <div class="item"><a href="/contatti">contatti</a></div>
     </div>
-    <Button text="Preventivo gratuito" />
+    {btnText && <Button text={btnText} />}
 </div>
 
 <style>
@@ -46,9 +53,14 @@ const { light } = Astro.props;
     .light {
         color: #111;
     }
-    .item a {
+    a {
         text-decoration: none;
+    }
+    .dark .item a {
         color: #fff;
+    }
+    .light .item a {
+        color: #111;
     }
     .item {
         margin-top: 3px;

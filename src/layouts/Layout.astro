@@ -10,9 +10,17 @@ import Header from "../components/Header.astro";
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
         <title>sohostudio | Agenzia creativa e di sviluppo</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body>
-        <slot />
+        <div class="layout">
+            <slot />
+        </div>
     </body>
 </html>
 
@@ -45,8 +53,14 @@ import Header from "../components/Header.astro";
     }
     body {
         font-family: "Satoshi", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
     * {
         font-family: "Satoshi", sans-serif;
+    }
+    .layout {
+        max-width: 1200px;
+        margin: 0 auto;
     }
 </style>

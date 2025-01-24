@@ -1,14 +1,49 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import HeroImg from "../assets/hero/home.png";
 ---
 
 <Layout>
     <Header light="dark" />
+    <div class="hero">
+        <h1>Trasformiamo idee in esperienze che fanno la differenza</h1>
+        <p class="subtitle">
+            Diamo vita a soluzioni su misura per il tuo business: dalla
+            tecnologia che semplifica all'estetica che fa la differenza.
+        </p>
+        <img src={HeroImg.src} />
+    </div>
 </Layout>
 
 <style>
     body {
         background: #111;
+    }
+    h1 {
+        font-family: "EB Garamond", serif;
+        font-optical-sizing: auto;
+        font-weight: <weight>;
+        font-style: normal;
+        color: #fff;
+        font-weight: 300;
+        font-size: 70px;
+        max-width: 670px;
+        line-height: 70px;
+        padding-top: 80px;
+    }
+    .subtitle {
+        color: #fff;
+        opacity: 0.8;
+        max-width: 420px;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .hero img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        opacity: 0.7;
     }
 </style>

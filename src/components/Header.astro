@@ -85,7 +85,13 @@ const sub = [
             <div class="item"><a href="/team">chi siamo</a></div>
             <div class="item"><a href="/contatti">contatti</a></div>
         </div>
-        {btnText && <Button>{btnText}</Button>}
+        {
+            btnText ? (
+                <Button>{btnText}</Button>
+            ) : (
+                <Button>Richiedi un preventivo</Button>
+            )
+        }
     </div>
 </div>
 

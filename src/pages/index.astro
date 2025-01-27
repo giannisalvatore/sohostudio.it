@@ -11,26 +11,32 @@ import "@/styles/globals.css";
 
 <Layout>
     <Header type="dark" btnText="Chiedi un preventivo" />
-    <div class="hero">
-        <h1>Trasformiamo idee in esperienze che fanno la differenza</h1>
-        <p class="subtitle">
-            Diamo vita a soluzioni su misura per il tuo business: dalla
-            tecnologia che semplifica all'estetica che fa la differenza.
+    <div class="container">
+        <div class="hero">
+            <h1>Trasformiamo idee in esperienze che fanno la differenza</h1>
+            <p class="subtitle">
+                Diamo vita a soluzioni su misura per il tuo business: dalla
+                tecnologia che semplifica all'estetica che fa la differenza.
+            </p>
+            <Button size="l">Richiedi un preventivo gratuito</Button>
+            <Image src={HeroImg} alt="A sphere of sohostudio." />
+        </div>
+        <Logos />
+        <h2 class="bigTitle">
+            Realizziamo prodotti e servizi migliori che portano risultati
+        </h2>
+        <p class="subBigTitle">
+            Il segreto dei prodotti di successo è soltanto uno: risolvono
+            problemi reali, e lo fanno meglio della concorrenza.
         </p>
-        <Button size="l">Richiedi un preventivo gratuito</Button>
-        <Image src={HeroImg} alt="A sphere of sohostudio." />
     </div>
-    <Logos />
-    <h2 class="bigTitle">
-        Realizziamo prodotti e servizi migliori che portano risultati
-    </h2>
-    <p class="subBigTitle">
-        Il segreto dei prodotti di successo è soltanto uno: risolvono problemi
-        reali, e lo fanno meglio della concorrenza.
-    </p>
 </Layout>
 
 <style>
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
     body {
         background: #111;
     }

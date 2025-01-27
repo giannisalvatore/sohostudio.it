@@ -49,24 +49,26 @@ const sub = [
 ---
 
 <div class={`header ${type}`}>
-    <a href="/">
-        <Image
-            src={type == "dark" ? logoWhite : logoBlack}
-            alt="sohostudio logo black"
-            class="logo"
-        />
-    </a>
-    <div class="menu">
-        <div class="item">
-            <NavigationMenu item={"servizi"} sub={sub} client:load />
+    <div class="inner">
+        <a href="/">
+            <Image
+                src={type == "dark" ? logoWhite : logoBlack}
+                alt="sohostudio logo black"
+                class="logo"
+            />
+        </a>
+        <div class="menu">
+            <div class="item">
+                <NavigationMenu item={"servizi"} sub={sub} client:load />
+            </div>
+            <div class="item"><a href="/portfolio">portfolio</a></div>
+            <hr />
+            <div class="item"><a href="/mission">valori</a></div>
+            <div class="item"><a href="/team">chi siamo</a></div>
+            <div class="item"><a href="/contatti">contatti</a></div>
         </div>
-        <div class="item"><a href="/portfolio">portfolio</a></div>
-        <hr />
-        <div class="item"><a href="/mission">valori</a></div>
-        <div class="item"><a href="/team">chi siamo</a></div>
-        <div class="item"><a href="/contatti">contatti</a></div>
+        {btnText && <Button>{btnText}</Button>}
     </div>
-    {btnText && <Button>{btnText}</Button>}
 </div>
 
 <style>
@@ -77,11 +79,24 @@ const sub = [
         margin-top: 6px;
         max-width: 110px;
     }
-    .header {
-        padding: 25px 0;
+    .inner {
+        max-width: 1200px;
+        margin: 0 auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+    .header {
+        padding: 25px 0;
+
+        position: sticky;
+        top: 0;
+    }
+    .header.dark {
+        background: linear-gradient(180deg, #000, transparent);
+    }
+    .header.light {
+        background: linear-gradient(180deg, #fff, transparent);
     }
     button {
         background: #212121;

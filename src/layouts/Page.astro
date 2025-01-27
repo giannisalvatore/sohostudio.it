@@ -5,8 +5,8 @@ import Logos from "@/components/Logos.astro";
 const { topTitle, title, subTitle, type, btnText } = Astro.props;
 ---
 
+<Header type={type} btnText={btnText} />
 <div class={`layout ${type}`}>
-    <Header type={type} btnText={btnText} />
     <div class="hero">
         <h2 class="topTitle">{topTitle}</h2>
         <h1 class="title">{title}</h1>
@@ -20,6 +20,10 @@ const { topTitle, title, subTitle, type, btnText } = Astro.props;
 </div>
 
 <style>
+    .layout {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
     .dark {
         color: #fff;
     }

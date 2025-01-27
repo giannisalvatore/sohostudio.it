@@ -63,13 +63,15 @@ const sub = [
 
 <div class={`header ${type}`}>
     <div class="inner">
-        <a href="/">
-            <Image
-                src={type == "dark" ? logoWhite : logoBlack}
-                alt="sohostudio logo black"
-                class="logo"
-            />
-        </a>
+        <div class="first">
+            <a href="/">
+                <Image
+                    src={type == "dark" ? logoWhite : logoBlack}
+                    alt="sohostudio logo black"
+                    class="logo"
+                />
+            </a>
+        </div>
         <div class="menu">
             <div class="item">
                 <NavigationMenu
@@ -85,19 +87,32 @@ const sub = [
             <div class="item"><a href="/team">chi siamo</a></div>
             <div class="item"><a href="/contatti">contatti</a></div>
         </div>
-        {
-            btnText ? (
-                <Button>{btnText}</Button>
-            ) : (
-                <Button>Richiedi un preventivo</Button>
-            )
-        }
+        <div class="last">
+            {
+                btnText ? (
+                    <Button>{btnText}</Button>
+                ) : (
+                    <Button>Richiedi un preventivo</Button>
+                )
+            }
+        </div>
     </div>
 </div>
 
 <style>
     hr {
         opacity: 0.3;
+    }
+    .first {
+        flex: 1;
+    }
+    .menu {
+        flex: 2;
+        justify-content: center;
+    }
+    .last {
+        flex: 1;
+        text-align: right;
     }
     .logo {
         margin-top: 6px;

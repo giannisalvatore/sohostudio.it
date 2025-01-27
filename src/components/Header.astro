@@ -59,7 +59,12 @@ const sub = [
         </a>
         <div class="menu">
             <div class="item">
-                <NavigationMenu item={"servizi"} sub={sub} client:load />
+                <NavigationMenu
+                    type={type}
+                    item={"servizi"}
+                    sub={sub}
+                    client:load
+                />
             </div>
             <div class="item"><a href="/portfolio">portfolio</a></div>
             <hr />
@@ -91,6 +96,7 @@ const sub = [
 
         position: sticky;
         top: 0;
+        z-index: 9;
     }
     .header.dark {
         background: linear-gradient(180deg, #000, transparent);

@@ -10,13 +10,18 @@ import {
     NavigationMenuTrigger,
 } from "./ui/navigation-menu";
 
-export default function NavigationMenu_({ item, sub }) {
+export default function NavigationMenu_({ item, sub, type }) {
     return (
         <NavigationMenu>
             <NavigationMenuList>
                 <NavigationMenuItem>
                     <NavigationMenuTrigger>{item}</NavigationMenuTrigger>
-                    <NavigationMenuContent>
+                    <NavigationMenuContent
+                        style={{
+                            background: type == "dark" ? "#111" : "#fff",
+                            borderRadius: "5px",
+                        }}
+                    >
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                             {sub.map((component) => (
                                 <ListItem

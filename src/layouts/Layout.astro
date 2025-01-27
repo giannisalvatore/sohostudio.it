@@ -1,3 +1,7 @@
+---
+const { type } = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -13,7 +17,7 @@
             rel="stylesheet"
         />
     </head>
-    <body>
+    <body class={type}>
         <div class="layout">
             <slot />
         </div>
@@ -57,5 +61,13 @@
     .layout {
         max-width: 1200px;
         margin: 0 auto;
+    }
+    .dark {
+        background: #111;
+        color: #fff;
+    }
+    .light {
+        background: #fff;
+        color: #111;
     }
 </style>

@@ -6,13 +6,20 @@ import { Image } from "astro:assets";
 import HeroImg from "../../assets/hero/branding.png";
 ---
 
-<Layout type="dark">
+<Layout>
     <Page
-        btnText="Parla con un developer"
-        topTitle="Software su misura"
-        title="Automatizza i processi della tua azienda"
-        type="dark"
+        type="light"
+        btnText="Parla con un designer"
+        topTitle="Branding, Creatività & Design"
+        title="Curiamo il tuo brand dalla A alla Z"
+        ,
         subTitle="Siamo esperti nel creare brand che si distinguono. Dal logo alla tua comunicazione visiva, realizziamo soluzioni su misura per farti emergere."
+    />
+    <Image
+        src={HeroImg}
+        alt="A sphere of sohostudio."
+        alt="Grad"
+        class="grad"
     />
 </Layout>
 

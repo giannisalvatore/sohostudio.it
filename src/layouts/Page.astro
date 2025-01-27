@@ -1,14 +1,20 @@
 ---
 import Header from "../components/Header.astro";
+import Button from "@/components/Button.astro";
+import Logos from "@/components/Logos.astro";
 const { topTitle, title, subTitle, type, btnText } = Astro.props;
 ---
 
-<div class="layout" type={type}>
+<div class={`layout ${type}`}>
     <Header type={type} btnText={btnText} />
     <div class="hero">
         <h2 class="topTitle">{topTitle}</h2>
         <h1 class="title">{title}</h1>
         <p class="subTitle">{subTitle}</p>
+        <div class="btnContainer">
+            <Button size="l">{btnText}</Button>
+        </div>
+        <Logos />
     </div>
     <slot />
 </div>
@@ -19,5 +25,36 @@ const { topTitle, title, subTitle, type, btnText } = Astro.props;
     }
     .light {
         color: #111;
+    }
+    h1 {
+        font-family: "EB Garamond", serif;
+        font-size: 70px;
+        line-height: 75px;
+        max-width: 590px;
+        text-align: center;
+        margin: 0 auto;
+        letter-spacing: -1px;
+        opacity: 0.9;
+    }
+    .topTitle {
+        text-align: center;
+        opacity: 0.8;
+        font-weight: 700;
+        margin-top: 70px;
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+    .subTitle {
+        max-width: 460px;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 18px;
+        line-height: 28px;
+        opacity: 0.7;
+        margin-top: 30px;
+    }
+    .btnContainer {
+        text-align: center;
+        margin-top: 30px;
     }
 </style>

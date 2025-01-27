@@ -9,6 +9,7 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
 } from "./ui/navigation-menu";
+import { Image } from "astro:assets";
 
 export default function NavigationMenu_({ item, sub, type }) {
     return (
@@ -28,6 +29,7 @@ export default function NavigationMenu_({ item, sub, type }) {
                                     key={component.title}
                                     title={component.title}
                                     href={component.href}
+                                    logo={component.logo}
                                 >
                                     {component.description}
                                 </ListItem>
@@ -40,7 +42,7 @@ export default function NavigationMenu_({ item, sub, type }) {
     );
 }
 
-const ListItem = ({ className, title, children, ...props }, ref) => {
+const ListItem = ({ className, title, logo, children, ...props }, ref) => {
     return (
         <li>
             <NavigationMenuLink asChild>
@@ -48,16 +50,23 @@ const ListItem = ({ className, title, children, ...props }, ref) => {
                     ref={ref}
                     className={cn(
                         "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-                        className
+                        className,
+                        "flex gap-2 items-center"
                     )}
                     {...props}
                 >
-                    <div className="text-sm font-medium leading-none">
-                        {title}
+                    <img
+                        src={logo.src}
+                        style={{ maxHeight: "50px", maxWidth: "50px" }}
+                    />
+                    <div>
+                        <div className="text-sm font-medium leading-none mb-2">
+                            {title}
+                        </div>
+                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            {children}
+                        </p>
                     </div>
-                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                        {children}
-                    </p>
                 </a>
             </NavigationMenuLink>
         </li>

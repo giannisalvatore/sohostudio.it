@@ -7,6 +7,13 @@ import logoWhite from "../assets/logo_white.svg";
 import NavigationMenu from "./NavigationMenu.jsx";
 import Button from "../components/Button.astro";
 
+import Grad01 from "../assets/categoryLogos/Grad_01.png";
+import Grad02 from "../assets/categoryLogos/Grad_02.png";
+import Grad03 from "../assets/categoryLogos/Grad_03.png";
+import Grad04 from "../assets/categoryLogos/Grad_04.png";
+import Grad05 from "../assets/categoryLogos/Grad_05.png";
+import Grad06 from "../assets/categoryLogos/Grad_06.png";
+
 const { type, btnText } = Astro.props;
 const sub = [
     {
@@ -14,36 +21,42 @@ const sub = [
         href: "/servizi/creativita-branding-design",
         description:
             "Creiamo identità visive uniche e soluzioni creative su misura.",
+        logo: Grad01,
     },
     {
         title: "Software su misura",
         href: "/servizi/software-su-misura",
         description:
             "Sviluppiamo software personalizzati per soddisfare le esigenze specifiche.",
+        logo: Grad02,
     },
     {
         title: "Intelligenza artificiale",
         href: "/servizi/intelligenza-artificiale",
         description:
             "Integriamo l'intelligenza artificiale per ottimizzare processi e operazioni.",
+        logo: Grad03,
     },
     {
         title: "Siti web & E-commerce",
         href: "/servizi/siti-web-e-commerce",
         description:
             "Progettiamo siti web ed e-commerce facili da usare e scalabili.",
+        logo: Grad04,
     },
     {
         title: "Landing page",
         href: "/servizi/landing-page",
         description:
             "Realizziamo landing page ottimizzate per conversioni elevate.",
+        logo: Grad05,
     },
     {
         title: "Marketing",
         href: "/servizi/marketing",
         description:
             "Strategie di marketing digitale per incrementare visibilità e engagement.",
+        logo: Grad06,
     },
 ];
 ---

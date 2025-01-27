@@ -1,0 +1,96 @@
+---
+const { type } = Astro.props;
+
+import { Image } from "astro:assets";
+
+import logoBlack from "../assets/logo_black.svg";
+import logoWhite from "../assets/logo_white.svg";
+
+import Button from "../components/Button.astro";
+---
+
+<div class=`footer ${type}`>
+    <div class="row">
+        <div class="first">
+            <a href="/">
+                <Image
+                    src={type == "dark" ? logoWhite : logoBlack}
+                    alt="sohostudio logo black"
+                    class="logo"
+                />
+            </a>
+        </div>
+        <div class="last">
+            <a href="#">Linkedin</a>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+        </div>
+    </div>
+    <div class="divcta">
+        <h2>Hai un'idea? Raccontacela!</h2>
+        <Button>Ti chiamiamo gratuitamente</Button>
+    </div>
+    <div>
+        <div class="or">oppure contattaci</div>
+    </div>
+    <div class="divemail">
+        <a href="mailto:hello@sohostudio.it">hello@sohostudio.it</a>
+    </div>
+    <div class="row last">
+        <div class="first">© 2025 Sohostudio. All rights reserved.</div>
+        <div class="last">
+            <a href="#">Cookie policy</a>
+            <a href="#">Privacy policy</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .last {
+        display: flex;
+        gap: 15px;
+        opacity: 0.7;
+    }
+    .last a {
+        border-bottom: 1px solid;
+        padding-bottom: 3px;
+    }
+    .footer {
+        background: #181818;
+        border-radius: 15px;
+
+        padding: 70px;
+
+        margin-bottom: 50px;
+    }
+    .dark {
+        color: #fff;
+    }
+    .light {
+        color: #111;
+    }
+    .row {
+        display: flex;
+        justify-content: space-between;
+    }
+    h2 {
+        font-family: "EB Garamond";
+        font-size: 40px;
+        opacity: 0.8;
+        margin-bottom: 20px;
+    }
+    .divcta {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .divemail {
+        font-size: 26px;
+        margin-bottom: 50px;
+    }
+    .or {
+        opacity: 0.5;
+    }
+    .row.last {
+        opacity: 0.5;
+    }
+</style>

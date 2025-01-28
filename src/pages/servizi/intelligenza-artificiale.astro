@@ -1,14 +1,261 @@
 ---
+import { Image } from "astro:assets";
+
 import Page from "../../layouts/Page.astro";
 import Layout from "../../layouts/Layout.astro";
+
+import Button from "@/components/Button.astro";
+
+import HeroImg from "../../assets/pages/intelligenza-artificiale/hero.png";
+import Triangle from "../../assets/pages/software-su-misura/triangolo.png";
+import Square from "../../assets/pages/software-su-misura/rettangolo.png";
+import Circle from "../../assets/pages/software-su-misura/cerchio.png";
+import Grad from "../../assets/pages/software-su-misura/grad.png";
+
+import Arrow from "../../assets/icons/arrow.svg";
 ---
 
 <Layout type="dark">
-    <Page
-        btnText="Parla con un nostro AI expert"
-        topTitle="Intelligenza artificiale"
-        title="Trasforma il tuo business con l'AI"
-        type="dark"
-        subTitle="Sfrutta il potenziale dell'intelligenza artificiale per rivoluzionare i processi aziendali portando il tuo business al prossimo livello."
+    <Image
+        src={HeroImg}
+        alt="Rappresentazione visiva di innovazione con AI."
+        class="grad"
     />
+    <Page
+        btnText="Parla con un esperto"
+        topTitle="Intelligenza artificiale"
+        title="Software con intelligenza artificiale"
+        type="dark"
+        subTitle="L'AI non è solo tecnologia: è il tuo alleato per risparmiare tempo, evitare errori e crescere in modo sostenibile."
+    >
+        <div class="banner">
+            <h2>
+                Sei pronto per l'AI?<br />Ecco come capire se è il momento
+                giusto:
+            </h2>
+            <div class="keys">
+                <div class="key">
+                    <Image src={Square} alt="Efficienza" />
+                    <p>
+                        Il tuo team dedica troppo tempo a compiti ripetitivi che
+                        un software intelligente potrebbe automatizzare.
+                    </p>
+                </div>
+                <div class="key">
+                    <Image src={Triangle} alt="Dati" />
+                    <p>
+                        Ti mancano dati aggiornati per prendere decisioni rapide
+                        e anticipare le tendenze del mercato.
+                    </p>
+                </div>
+                <div class="key">
+                    <Image src={Circle} alt="Personalizzazione" />
+                    <p>
+                        Non riesci a soddisfare le aspettative dei clienti con
+                        esperienze personalizzate e su misura.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="features">
+            <h2>Non solo automazione: un'innovazione concreta</h2>
+            <div class="row">
+                <div class="box">
+                    <h3>Automazione Intelligente</h3>
+                    <p>
+                        Automatizza la gestione di fatture, inventario e
+                        assistenza clienti, riducendo al minimo gli errori.
+                    </p>
+                </div>
+                <div class="box">
+                    <h3>Previsioni su Misura</h3>
+                    <p>
+                        Usa analisi predittive per ottimizzare scorte,
+                        pianificare strategie e massimizzare i profitti.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box">
+                    <h3>Esperienze Personalizzate</h3>
+                    <p>
+                        Implementa chatbot evoluti e sistemi di raccomandazione
+                        per offrire valore unico ai tuoi clienti.
+                    </p>
+                </div>
+                <div class="box">
+                    <h3>Sicurezza su Tutti i Fronti</h3>
+                    <p>
+                        Proteggi il tuo business con rilevamento frodi in tempo
+                        reale e conformità normativa automatica.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <Image src={Grad} alt="Grafica innovativa." class="grad2" />
+        <div class="timeline">
+            <h2>Il nostro metodo</h2>
+            <div class="item">1. Analisi dettagliata dei tuoi bisogni</div>
+            <Image src={Arrow} alt="Arrow" />
+            <div class="item">2. Progettazione della soluzione ideale</div>
+            <Image src={Arrow} alt="Arrow" />
+            <div class="item">
+                3. Sviluppo collaborativo con feedback continuo
+            </div>
+            <Image src={Arrow} alt="Arrow" />
+            <div class="item">4. Test rigorosi e ottimizzazione finale</div>
+            <Image src={Arrow} alt="Arrow" />
+            <div class="item">5. Implementazione e formazione del team</div>
+            <Image src={Arrow} alt="Arrow" />
+            <div class="item">6. Supporto dedicato post-lancio</div>
+        </div>
+
+        <div class="banner">
+            <h2 class="bigTitle">Condividi con noi la tua visione</h2>
+            <Button size="l">Scopri il nostro approccio</Button>
+        </div>
+
+        <div class="build">
+            <h2>Costruiamo soluzioni su misura per te</h2>
+            <div class="row">
+                <div class="box">
+                    <h3>Gestionali aziendali evoluti</h3>
+                </div>
+                <div class="box">
+                    <h3>Automazione dei processi strategici</h3>
+                </div>
+                <div class="box">
+                    <h3>Sistemi avanzati di gestione magazzino</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box">
+                    <h3>Piattaforme e-commerce innovative</h3>
+                </div>
+                <div class="box">
+                    <h3>App web e mobile intuitive</h3>
+                </div>
+                <div class="box">
+                    <h3>E tanto altro ancora</h3>
+                </div>
+            </div>
+        </div>
+    </Page>
 </Layout>
+
+<style>
+    .grad {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%);
+        z-index: -1;
+        opacity: 0.7;
+        max-width: 780px;
+    }
+    .banner {
+        margin-top: 40px;
+    }
+    h2 {
+        font-size: 45px;
+        line-height: 48px;
+        text-align: center;
+        font-family: "EB Garamond";
+        opacity: 0.8;
+    }
+    .key img {
+        max-width: 48px;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+    .keys {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        max-width: 700px;
+
+        margin: 0 auto;
+
+        margin-top: 60px;
+        margin-bottom: 140px;
+    }
+    .key p {
+        text-align: center;
+
+        max-width: 200px;
+        margin: 0 auto;
+
+        opacity: 0.7;
+    }
+    .key {
+        flex: 1;
+    }
+    .row {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+    .box {
+        background: #181818;
+        padding: 40px;
+        border-radius: 10px;
+        flex: 1;
+    }
+    .box h3 {
+        font-size: 35px;
+        font-family: "EB Garamond";
+        max-width: 70%;
+        line-height: 38px;
+        margin-bottom: 70px;
+    }
+    .box p {
+        font-size: 16px;
+        opacity: 0.7;
+        max-width: 70%;
+    }
+    .features h2 {
+        margin-bottom: 60px;
+    }
+    .features {
+        margin-bottom: 120px;
+    }
+    .timeline {
+        text-align: center;
+        margin-bottom: 120px;
+    }
+    .timeline h2 {
+        margin-bottom: 40px;
+    }
+    .timeline img {
+        margin: 0 auto;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .item {
+        background: rgb(255, 255, 255, 0.03);
+        border: 1px solid rgb(255, 255, 255, 0.1);
+        border-radius: 5px;
+        padding: 20px 25px;
+        font-size: 16px;
+        max-width: 450px;
+        margin: 0 auto;
+        font-weight: 700;
+        color: rgb(255, 255, 255, 0.7);
+    }
+    .build h2 {
+        margin-bottom: 60px;
+    }
+    .grad2 {
+        position: absolute;
+        left: 0;
+        z-index: -1;
+    }
+    .banner {
+        text-align: center;
+        margin-bottom: 120px;
+    }
+    .banner h2 {
+        margin-bottom: 30px;
+    }
+</style>

@@ -3,6 +3,9 @@ import react from '@astrojs/react';
 
 import tailwind from '@astrojs/tailwind';
 
+import sitemap from '@astrojs/sitemap';
+
 export default defineConfig({
-    integrations: [react(), tailwind()],
+    site: 'https://www.sohostudio.it',
+    integrations: [react(), tailwind(), sitemap()],
 });

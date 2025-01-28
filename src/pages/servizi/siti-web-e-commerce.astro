@@ -1,9 +1,18 @@
 ---
 import Page from "../../layouts/Page.astro";
 import Layout from "../../layouts/Layout.astro";
+
+import { Image } from "astro:assets";
+import HeroImg from "../../assets/pages/e-commerce/hero.jpg";
 ---
 
 <Layout type="light">
+    <Image
+        src={HeroImg}
+        alt="A sphere of sohostudio."
+        alt="Grad"
+        class="grad"
+    />
     <Page
         btnText="Parla con un nostro store expert"
         topTitle="Siti web & E-commerce"
@@ -12,3 +21,14 @@ import Layout from "../../layouts/Layout.astro";
         subTitle="Creiamo soluzioni web personalizzate per ottimizzare l'esperienza utente e far crescere il tuo business."
     />
 </Layout>
+
+<style>
+    .grad {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        opacity: 0.8;
+        max-width: 600px;
+    }
+</style>

@@ -1,0 +1,15 @@
+---
+import { SEO } from "astro-seo";
+import seoData from "../data/seo.json";
+
+const { pathname } = Astro.url;
+const seo = seoData[pathname] || seoData.default;
+---
+
+<SEO
+    title={seo.title}
+    description={seo.description}
+    openGraph={seo.openGraph}
+    twitter={seo.twitter}
+    extend={seo.extend}
+/>

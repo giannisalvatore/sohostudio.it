@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import { SEO } from "astro-seo";
 
 import Layout from "../layouts/Layout.astro";
 
@@ -11,61 +10,6 @@ import Logos from "../components/Logos.astro";
 import Button from "../components/Button.astro";
 import Footer from "../components/Footer.astro";
 ---
-
-<SEO
-    title="sohostudio | Agenzia digitale creativa & Sviluppo software su misura | Roma"
-    description="Soluzioni digitali basate sull'AI e sviluppo software su misura per aziende innovative. Dal branding allo sviluppo web, creiamo esperienze digitali che convertono. Con sede a Roma, consegniamo in tutto il mondo."
-    openGraph={{
-        basic: {
-            title: "sohostudio | Agenzia per l'Innovazione Digitale",
-            type: "website",
-            image: "https://sohostudio.com/images/og-home.jpg",
-            url: "https://sohostudio.com/",
-        },
-    }}
-    twitter={{
-        card: "summary_large_image",
-        site: "@sohostudio",
-        creator: "@sirgi__",
-    }}
-    extend={{
-        link: [
-            { rel: "icon", href: "/favicon.ico" },
-            { rel: "canonical", href: "https://sohostudio.com/" },
-        ],
-        meta: [
-            {
-                name: "keywords",
-                content:
-                    "agenzia digitale roma, sviluppo software personalizzato, soluzioni AI, sviluppo web roma, branding aziendale, sviluppo SaaS, shooting, ui/ux design",
-            },
-            { name: "geo.region", content: "IT-62" },
-            { name: "geo.placename", content: "Roma" },
-            {
-                name: "twitter:image",
-                content: "https://sohostudio.com/images/twitter-card-home.jpg",
-            },
-            {
-                name: "twitter:title",
-                content:
-                    "sohostudio | Innovazione Digitale & Soluzioni AI su Misura",
-            },
-            {
-                name: "twitter:description",
-                content:
-                    "Agenzia digitale di Roma che trasforma le aziende attraverso software basati sull'AI e sviluppo web avanzato.",
-            },
-            { name: "google-site-verification", content: "XYZabc123" },
-            { name: "ahrefs-site-verification", content: "xyz123abc" },
-            { httpEquiv: "x-ua-compatible", content: "IE=edge" },
-            {
-                name: "viewport",
-                content:
-                    "width=device-width, initial-scale=1, shrink-to-fit=no",
-            },
-        ],
-    }}
-/>
 
 <Layout>
     <Header type="dark" btnText="Chiedi un preventivo" />

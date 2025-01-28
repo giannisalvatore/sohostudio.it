@@ -49,6 +49,45 @@ import Circle from "../../assets/pages/software-su-misura/cerchio.png";
                 </div>
             </div>
         </div>
+        <div class="features">
+            <h2>4 vantaggi che solo un software fatto per te può dare</h2>
+            <div class="row">
+                <div class="box">
+                    <h3>Fatto apposta per te, non per gli altri</h3>
+                    <p>
+                        Niente funzioni inutili che non userai mai: ci
+                        concentriamo su ciò che serve davvero alla tua attività,
+                        punto per punto.
+                    </p>
+                </div>
+                <div class="box">
+                    <h3>Basta perdite di tempo e soldi</h3>
+                    <p>
+                        Automatizza i task che rallentano il tuo team, dagli
+                        ordini alla fatturazione, e riprenditi le ore perse a
+                        correggere errori.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box">
+                    <h3>Cresce con te, senza stravolgere tutto</h3>
+                    <p>
+                        Se domani raddoppi gli ordini o assumi 10 persone, il
+                        software si adatta senza costi nascosti. E funziona con
+                        gli strumenti che usi già.
+                    </p>
+                </div>
+                <div class="box">
+                    <h3>Non sarai mai solo, avrai supporto continuo</h3>
+                    <p>
+                        Aggiornamenti, assistenza in 24 ore e nuove funzioni
+                        basate sui tuoi feedback. Perché il tuo successo è il
+                        nostro.
+                    </p>
+                </div>
+            </div>
+        </div>
     </Page>
 </Layout>
 
@@ -64,7 +103,7 @@ import Circle from "../../assets/pages/software-su-misura/cerchio.png";
     .banner {
         margin-top: 40px;
     }
-    .banner h2 {
+    h2 {
         font-size: 45px;
         line-height: 48px;
         text-align: center;
@@ -98,5 +137,33 @@ import Circle from "../../assets/pages/software-su-misura/cerchio.png";
     }
     .key {
         flex: 1;
+    }
+    .row {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+    .box {
+        background: #181818;
+        padding: 40px;
+        border-radius: 10px;
+        flex: 1;
+    }
+    .box h3 {
+        font-size: 35px;
+        font-family: "EB Garamond";
+        max-width: 70%;
+        line-height: 38px;
+        margin-bottom: 70px;
+    }
+    .box p {
+        font-size: 16px;
+        opacity: 0.7;
+    }
+    .features h2 {
+        margin-bottom: 60px;
+    }
+    .features {
+        margin-bottom: 80px;
     }
 </style>

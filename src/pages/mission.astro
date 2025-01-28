@@ -1,13 +1,30 @@
 ---
 import Page from "../layouts/Page.astro";
 import Layout from "../layouts/Layout.astro";
+
+import Earth from "../assets/hero/mission.jpg";
+import { Image } from "astro:assets";
 ---
 
-<Layout type="light">
+<Layout type="dark">
     <Page
         topTitle="Mission"
         title="I nostri valori sono più importanti"
-        type="light"
+        type="dark"
         subTitle="Siamo guidati dalla passione per l'innovazione e l'eccellenza, impegnandoci a fornire soluzioni che fanno la differenza per i nostri clienti."
     />
+    <Image src={Earth} alt="Hero image" class="hero" />
 </Layout>
+
+<style>
+    .hero {
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        left: 0;
+        top: 0;
+    }
+    body {
+        background: #000 !important;
+    }
+</style>

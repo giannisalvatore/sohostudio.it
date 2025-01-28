@@ -12,8 +12,45 @@ import { Image } from "astro:assets";
         title="I nostri valori sono più importanti"
         type="dark"
         subTitle="Siamo guidati dalla passione per l'innovazione e l'eccellenza, impegnandoci a fornire soluzioni che fanno la differenza per i nostri clienti."
-    />
-    <Image src={Earth} alt="Hero image" class="hero" />
+    >
+        <Image src={Earth} alt="Hero image" class="hero" />
+        <div class="text">
+            <h2>Creatività senza stress</h2>
+            <p>
+                Crediamo che le migliori idee nascano in un ambiente sereno. Per
+                questo, lavoriamo con calma e concentrazione, senza pressioni
+                inutili. Le persone felici creano progetti straordinari.
+            </p>
+
+            <h2>Passione</h2>
+            <p>
+                Il nostro obiettivo è crescere e prosperare, ma sempre facendo
+                ciò che amiamo. Ogni progetto è un’opportunità per creare valore
+                reale, sia per noi che per i nostri clienti.
+            </p>
+
+            <h2>Collaborazione autentica</h2>
+            <p>
+                Costruiamo rapporti sinceri e solidi, sia con il nostro team che
+                con i clienti. Ascoltiamo, rispettiamo le idee di tutti e
+                lavoriamo come una squadra per raggiungere grandi traguardi.
+            </p>
+
+            <h2>Qualità sopra la quantità</h2>
+            <p>
+                Non crediamo nei compromessi. Ogni progetto che realizziamo è
+                curato nei minimi dettagli, perché vogliamo che ogni nostro
+                lavoro lasci il segno.
+            </p>
+
+            <h2>Imparare, crescere e innovare</h2>
+            <p>
+                Ci impegniamo a restare curiosi e aperti al cambiamento.
+                Investiamo nel miglioramento continuo per offrire soluzioni
+                sempre innovative e al passo con i tempi.
+            </p>
+        </div>
+    </Page>
 </Layout>
 
 <style>
@@ -26,5 +63,22 @@ import { Image } from "astro:assets";
     }
     body {
         background: #000 !important;
+    }
+    .text {
+        max-width: 540px;
+        margin: 0 auto;
+        margin-bottom: 120px;
+        margin-top: 20px;
+    }
+    .text h2 {
+        font-family: "EB Garamond";
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    .text p {
+        margin-bottom: 50px;
+        font-weight: 400;
+        opacity: 0.7;
+        font-size: 18px;
     }
 </style>

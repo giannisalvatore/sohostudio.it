@@ -4,9 +4,23 @@ import Layout from "../../layouts/Layout.astro";
 
 import { Image } from "astro:assets";
 import HeroImg from "../../assets/hero/branding.png";
+import Button from "@/components/Button.astro";
+
+import BrandIdentity from "../../assets/projects/branding/brand-identity.jpg";
+import ArtDirection from "../../assets/projects/branding/art-direction.jpg";
+import Comunicazione from "../../assets/projects/branding/comunicazione.jpg";
+import Shooting from "../../assets/projects/branding/shooting.jpg";
+import Storytelling from "../../assets/projects/branding/storytelling.jpg";
+import UX from "../../assets/projects/branding/ux.jpg";
 ---
 
 <Layout>
+    <Image
+        src={HeroImg}
+        alt="A sphere of sohostudio."
+        alt="Grad"
+        class="grad"
+    />
     <Page
         type="light"
         btnText="Parla con un designer"
@@ -14,13 +28,97 @@ import HeroImg from "../../assets/hero/branding.png";
         title="Curiamo il tuo brand dalla A alla Z"
         ,
         subTitle="Siamo esperti nel creare brand che si distinguono. Dal logo alla tua comunicazione visiva, realizziamo soluzioni su misura per farti emergere."
-    />
-    <Image
-        src={HeroImg}
-        alt="A sphere of sohostudio."
-        alt="Grad"
-        class="grad"
-    />
+    >
+        <div class="banner">
+            <h2>Eleviamo il tuo brand</h2>
+            <p>Un brand di successo è un brand che viene ricordato</p>
+        </div>
+        <div class="services">
+            <div class="col">
+                <div class="service">
+                    <Image
+                        src={BrandIdentity}
+                        alt="Brand identity by soho studio"
+                    />
+                    <h2>Brand Identity</h2>
+                    <p>
+                        Il tuo logo, i tuoi colori, il tuo stile: lavoriamo su
+                        ogni dettaglio per farti riconoscere al primo sguardo.
+                        Perché quando i clienti si fidano del tuo aspetto,
+                        scelgono te invece dei competitor.
+                    </p>
+                </div>
+                <div class="service">
+                    <Image
+                        src={Comunicazione}
+                        alt="Comunicazione by soho studio"
+                    />
+                    <h2>Social media management</h2>
+                    <p>
+                        I social sono il tuo palcoscenico, non un megafono.
+                        Creiamo contenuti che fanno vibrare il pubblico,
+                        strategie che trasformano like in lead e storie che
+                        costruiscono fedeltà, non solo follower.
+                    </p>
+                </div>
+                <div class="service">
+                    <Image src={UX} alt="UI/UX design by soho studio" />
+                    <h2>UI/UX Design</h2>
+                    <p>
+                        Design che seduce e funziona: interfacce intuitive,
+                        percorsi senza attriti e micro-interazioni che
+                        trasformano un utente casuale in un cliente entusiasta.
+                        Perché l’usabilità è la nuova eleganza.
+                    </p>
+                </div>
+            </div>
+            <div class="col2">
+                <div class="service">
+                    <Image
+                        src={ArtDirection}
+                        alt="Art direction by soho studio"
+                    />
+                    <h2>Art Direction</h2>
+                    <p>
+                        Dalle foto ai video, dai social al packaging: curiamo
+                        ogni visual per trasmettere professionalità e far
+                        ricordare il tuo brand. Perché l’occhio vuole la sua
+                        parte, ma soprattutto vuole coerenza.
+                    </p>
+                </div>
+                <div class="service">
+                    <Image
+                        src={Shooting}
+                        alt="Shooting service by soho studio"
+                    />
+                    <h2>Shooting</h2>
+                    <p>
+                        Foto che non mostrano soltanto il prodotto, ma
+                        raccontano perché dovrebbero comprarlo. Luce, angoli e
+                        styling studiati per far dire al cliente: ‘Questo fa per
+                        me’.
+                    </p>
+                </div>
+                <div class="service">
+                    <Image
+                        src={Storytelling}
+                        alt="Storytelling by soho studio"
+                    />
+                    <h2>Visual Storytelling</h2>
+                    <p>
+                        Lo sappiamo: il tuo brand ha una storia speciale. Noi la
+                        traduciamo in foto, grafiche e video che la fanno
+                        emergere senza urlare. Perché il miglior marketing è
+                        quello che sembra non esserci.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="banner">
+            <h2 class="bigTitle">Raccontaci la tua idea pazzesca</h2>
+            <Button size="xl">Richiedi un preventivo gratuito</Button>
+        </div>
+    </Page>
 </Layout>
 
 <style>
@@ -31,5 +129,63 @@ import HeroImg from "../../assets/hero/branding.png";
         transform: translate(-50%);
         z-index: -1;
         opacity: 0.7;
+    }
+    .services {
+        display: flex;
+        gap: 45px;
+
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .banner {
+        margin-top: 80px;
+        margin-bottom: 120px;
+        text-align: center;
+    }
+    .banner h2 {
+        margin-bottom: 20px;
+        font-size: 75px;
+        line-height: 75px;
+        max-width: 900px;
+        color: #111;
+        font-family: "EB Garamond", serif;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 30px;
+        opacity: 0.8;
+    }
+    .banner p {
+        font-size: 20px;
+        text-align: center;
+        margin: 0 auto;
+        color: #111;
+        opacity: 0.6;
+        max-width: 600px;
+        font-weight: 400;
+        margin-top: 30px;
+        margin-bottom: 100px;
+    }
+    .services h2 {
+        font-family: "EB Garamond";
+        margin-top: 25px;
+        font-size: 35px;
+        margin-bottom: 15px;
+    }
+    .services p {
+        opacity: 0.7;
+        font-size: 16px;
+    }
+    .col2 {
+        padding-top: 100px;
+    }
+    .service {
+        margin-bottom: 60px;
+    }
+    .col,
+    .col2 {
+        flex: 1;
+    }
+    .banner h2.bigTitle {
+        margin-bottom: 40px;
     }
 </style>

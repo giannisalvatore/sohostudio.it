@@ -7,6 +7,9 @@ import HeroImg from "../../assets/hero/software.png";
 import Triangle from "../../assets/pages/software-su-misura/triangolo.png";
 import Square from "../../assets/pages/software-su-misura/rettangolo.png";
 import Circle from "../../assets/pages/software-su-misura/cerchio.png";
+import Grad from "../../assets/pages/software-su-misura/grad.png";
+
+import Arrow from "../../assets/icons/arrow.svg";
 ---
 
 <Layout type="dark">
@@ -88,6 +91,55 @@ import Circle from "../../assets/pages/software-su-misura/cerchio.png";
                 </div>
             </div>
         </div>
+        <Image
+            src={Grad}
+            alt="A sphere of sohostudio."
+            alt="Grad"
+            class="grad2"
+        />
+        <div class="timeline">
+            <h2>Il nostro processo</h2>
+            <div class="item">1. Analisi approfondita delle tue esigenze</div>
+            <Image src={Arrow} alt="Arrow" />
+            <div class="item">2. Progettazione della soluzione ottimale</div>
+            <Image src={Arrow} alt="Arrow" />
+            <div class="item">3. Sviluppo iterativo con feedback costante</div>
+            <Image src={Arrow} alt="Arrow" />
+            <div class="item">4. Test approfonditi e ottimizzazione</div>
+            <Image src={Arrow} alt="Arrow" />
+            <div class="item">
+                5. Implementazione e formazione del personale
+            </div>
+            <Image src={Arrow} alt="Arrow" />
+            <div class="item">6. Analisi approfondita delle tue esigenze</div>
+            <Image src={Arrow} alt="Arrow" />
+            <div class="item">7. Supporto continuo post-rilascio</div>
+        </div>
+        <div class="build">
+            <h2>Realizziamo qualsiasi cosa hai in mente</h2>
+            <div class="row">
+                <div class="box">
+                    <h3>Gestionali aziendali personalizzati</h3>
+                </div>
+                <div class="box">
+                    <h3>Software per l'automazione dei processi</h3>
+                </div>
+                <div class="box">
+                    <h3>Sistemi di gestione del magazzino</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box">
+                    <h3>Piattaforme di e-commerce su misura</h3>
+                </div>
+                <div class="box">
+                    <h3>Applicazioni web e mobile</h3>
+                </div>
+                <div class="box">
+                    <h3>E molto altro</h3>
+                </div>
+            </div>
+        </div>
     </Page>
 </Layout>
 
@@ -164,6 +216,36 @@ import Circle from "../../assets/pages/software-su-misura/cerchio.png";
         margin-bottom: 60px;
     }
     .features {
-        margin-bottom: 80px;
+        margin-bottom: 120px;
+    }
+    .timeline {
+        text-align: center;
+        margin-bottom: 120px;
+    }
+    .timeline h2 {
+        margin-bottom: 40px;
+    }
+    .timeline img {
+        margin: 0 auto;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .item {
+        background: rgb(255, 255, 255, 0.03);
+        border: 1px solid rgb(255, 255, 255, 0.1);
+        border-radius: 5px;
+        padding: 20px 25px;
+        font-size: 16px;
+        max-width: 450px;
+        margin: 0 auto;
+        font-weight: 700;
+        color: rgb(255, 255, 255, 0.7);
+    }
+    .build h2 {
+        margin-bottom: 60px;
+    }
+    .grad2 {
+        position: absolute;
+        left: 0;
     }
 </style>

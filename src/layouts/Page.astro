@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Button from "@/components/Button.astro";
 import Logos from "@/components/Logos.astro";
+import Footer from "@/components/Footer.astro";
 const { topTitle, title, subTitle, type, btnText } = Astro.props;
 import "@/styles/globals.css";
 ---
@@ -18,6 +19,7 @@ import "@/styles/globals.css";
         <Logos />
     </div>
     <slot />
+    <Footer type={type} />
 </div>
 
 <style>

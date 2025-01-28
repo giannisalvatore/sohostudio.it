@@ -3,6 +3,7 @@ import Page from "../../layouts/Page.astro";
 import Layout from "../../layouts/Layout.astro";
 
 import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 import HeroImg from "../../assets/pages/e-commerce/hero.jpg";
 
 import Triangle from "../../assets/pages/software-su-misura/triangolo.png";
@@ -49,6 +50,96 @@ import Circle from "../../assets/pages/software-su-misura/cerchio.png";
                     <p>
                         Non rilasciamo il progetto e basta: monitoriamo i
                         risultati per 2 mesi gratuitamente
+                    </p>
+                </div>
+            </div>
+        </div>
+        <h2>
+            Rendi semplice il processo di conversione<br />
+            qualsiasi sia l’obiettivo<br />
+            dalla vendita alla raccolta di e-mail
+        </h2>
+        <div class="build">
+            <div class="row">
+                <div class="box">
+                    <Icon name="mdi:storefront" class="icon" />
+                    <h3>Soluzioni di e-commerce personalizzate</h3>
+                    <p>
+                        Progettiamo piattaforme uniche e scalabili, integrate
+                        con i migliori strumenti per la gestione delle vendite
+                        online.
+                    </p>
+                </div>
+                <div class="box">
+                    <Icon name="mdi:web" class="icon" />
+                    <h3>Landing page ad alte prestazioni</h3>
+                    <p>
+                        Creiamo pagine ottimizzate per la conversione, perfette
+                        per campagne pubblicitarie e funnel di vendita.
+                    </p>
+                </div>
+                <div class="box">
+                    <Icon name="mdi:account-circle-outline" class="icon" />
+                    <h3>Design orientato all'utente</h3>
+                    <p>
+                        Ogni progetto è pensato per offrire un’esperienza
+                        intuitiva e coinvolgente ai tuoi utenti.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box">
+                    <Icon name="mdi:magnify" class="icon" />
+                    <h3>Ottimizzazione SEO integrata</h3>
+                    <p>
+                        Le nostre soluzioni sono progettate per essere visibili
+                        sui motori di ricerca e migliorare il tuo
+                        posizionamento.
+                    </p>
+                </div>
+                <div class="box">
+                    <Icon name="mdi:rocket-launch-outline" class="icon" />
+                    <h3>Performance al primo posto</h3>
+                    <p>
+                        Velocità di caricamento e ottimizzazione tecnica
+                        garantiscono un'esperienza senza interruzioni.
+                    </p>
+                </div>
+                <div class="box">
+                    <Icon name="mdi:chart-line" class="icon" />
+                    <h3>Analisi dei dati e miglioramenti</h3>
+                    <p>
+                        Monitoriamo e analizziamo l'impatto delle tue pagine per
+                        garantirti risultati sempre migliori.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box">
+                    <Icon
+                        name="mdi:transit-connection-horizontal"
+                        class="icon"
+                    />
+                    <h3>Integrazione con strumenti di marketing</h3>
+                    <p>
+                        Colleghiamo le tue pagine con CRM, sistemi di email
+                        marketing e altre piattaforme essenziali.
+                    </p>
+                </div>
+                <div class="box">
+                    <Icon name="mdi:lifebuoy" class="icon" />
+                    <h3>Supporto continuo e manutenzione</h3>
+                    <p>
+                        Ti accompagniamo anche dopo il lancio, per assicurarti
+                        che tutto funzioni al meglio nel tempo.
+                    </p>
+                </div>
+                <div class="box">
+                    <Icon name="mdi:lightbulb-outline" class="icon" />
+                    <h3>Creatività e strategia</h3>
+                    <p>
+                        Uniamo design accattivante e strategie di marketing per
+                        farti raggiungere i tuoi obiettivi.
                     </p>
                 </div>
             </div>
@@ -114,17 +205,23 @@ import Circle from "../../assets/pages/software-su-misura/cerchio.png";
         margin-bottom: 20px;
     }
     .box {
-        background: #181818;
+        background: #f3f3f3;
         padding: 40px;
         border-radius: 10px;
         flex: 1;
+    }
+    .box svg {
+        height: 28px;
+        width: 28px;
+        margin-bottom: 15px;
+        opacity: 0.7;
     }
     .box h3 {
         font-size: 35px;
         font-family: "EB Garamond";
         max-width: 70%;
         line-height: 38px;
-        margin-bottom: 70px;
+        margin-bottom: 20px;
     }
     .box p {
         font-size: 16px;
@@ -174,5 +271,22 @@ import Circle from "../../assets/pages/software-su-misura/cerchio.png";
     }
     .banner h2 {
         margin-bottom: 30px;
+    }
+    .section h3 {
+        font-weight: 300;
+        margin-bottom: 20px;
+
+        font-family: "EB Garamond";
+        font-size: 32px;
+    }
+    .section p {
+        opacity: 0.7;
+        max-width: 380px;
+    }
+    .section .left {
+        max-width: 50%;
+    }
+    .build {
+        margin-top: 120px;
     }
 </style>

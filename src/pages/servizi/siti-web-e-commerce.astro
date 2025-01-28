@@ -4,6 +4,10 @@ import Layout from "../../layouts/Layout.astro";
 
 import { Image } from "astro:assets";
 import HeroImg from "../../assets/pages/e-commerce/hero.jpg";
+
+import Triangle from "../../assets/pages/software-su-misura/triangolo.png";
+import Square from "../../assets/pages/software-su-misura/rettangolo.png";
+import Circle from "../../assets/pages/software-su-misura/cerchio.png";
 ---
 
 <Layout type="light">
@@ -16,10 +20,40 @@ import HeroImg from "../../assets/pages/e-commerce/hero.jpg";
     <Page
         btnText="Parla con un nostro store expert"
         topTitle="Siti web & E-commerce"
-        title="Dai vita alla tua presenza online"
+        title="Trasforma visitatori in clienti fedeli"
         type="light"
-        subTitle="Creiamo soluzioni web personalizzate per ottimizzare l'esperienza utente e far crescere il tuo business."
-    />
+        subTitle="Siti performanti e e-commerce su misura che aumentano del 67%* il tempo di permanenza e del 45%* le conversioni (*media clienti)"
+    >
+        <div class="banner">
+            <h2>Perchè dovresti sceglierci</h2>
+            <div class="keys">
+                <div class="key">
+                    <Image src={Square} alt="Square" />
+                    <h3>Design guidato dai dati</h3>
+                    <p>
+                        Analizziamo il comportamento degli utenti per progettare
+                        interfacce che convertono
+                    </p>
+                </div>
+                <div class="key">
+                    <Image src={Triangle} alt="Triangle" />
+                    <h3>Tecnologia future-proof</h3>
+                    <p>
+                        Architetture scalabili con prestazioni ottimizzate e
+                        sicurezza certificata
+                    </p>
+                </div>
+                <div class="key">
+                    <Image src={Circle} alt="Circle" />
+                    <h3>Growth Partnership</h3>
+                    <p>
+                        Non rilasciamo il progetto e basta: monitoriamo i
+                        risultati per 2 mesi gratuitamente
+                    </p>
+                </div>
+            </div>
+        </div>
+    </Page>
 </Layout>
 
 <style>
@@ -30,5 +64,115 @@ import HeroImg from "../../assets/pages/e-commerce/hero.jpg";
         z-index: -1;
         opacity: 0.8;
         max-width: 600px;
+    }
+    .banner {
+        margin-top: 40px;
+    }
+    h2 {
+        font-size: 45px;
+        line-height: 48px;
+        text-align: center;
+        font-family: "EB Garamond";
+        opacity: 0.8;
+    }
+    .key img {
+        max-width: 48px;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+    .keys {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        max-width: 800px;
+
+        margin: 0 auto;
+
+        margin-top: 60px;
+        margin-bottom: 140px;
+        gap: 20px;
+    }
+    .key h3 {
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    .key p {
+        text-align: center;
+
+        max-width: 350px;
+        margin: 0 auto;
+
+        opacity: 0.7;
+    }
+    .key {
+        flex: 1;
+    }
+    .row {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+    .box {
+        background: #181818;
+        padding: 40px;
+        border-radius: 10px;
+        flex: 1;
+    }
+    .box h3 {
+        font-size: 35px;
+        font-family: "EB Garamond";
+        max-width: 70%;
+        line-height: 38px;
+        margin-bottom: 70px;
+    }
+    .box p {
+        font-size: 16px;
+        opacity: 0.7;
+        max-width: 70%;
+    }
+    .features h2 {
+        margin-bottom: 60px;
+    }
+    .features {
+        margin-bottom: 120px;
+    }
+    .timeline {
+        text-align: center;
+        margin-bottom: 120px;
+    }
+    .timeline h2 {
+        margin-bottom: 40px;
+    }
+    .timeline img {
+        margin: 0 auto;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .item {
+        background: rgb(255, 255, 255, 0.03);
+        border: 1px solid rgb(255, 255, 255, 0.1);
+        border-radius: 5px;
+        padding: 20px 25px;
+        font-size: 16px;
+        max-width: 450px;
+        margin: 0 auto;
+        font-weight: 700;
+        color: rgb(255, 255, 255, 0.7);
+    }
+    .build h2 {
+        margin-bottom: 60px;
+    }
+    .grad2 {
+        position: absolute;
+        left: 0;
+        z-index: -1;
+    }
+    .banner {
+        text-align: center;
+        margin-bottom: 120px;
+    }
+    .banner h2 {
+        margin-bottom: 30px;
     }
 </style>

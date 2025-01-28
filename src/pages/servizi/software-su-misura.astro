@@ -3,26 +3,100 @@ import Page from "../../layouts/Page.astro";
 import Layout from "../../layouts/Layout.astro";
 
 import { Image } from "astro:assets";
-import HeroImg from "../../assets/hero/branding.png";
+import HeroImg from "../../assets/hero/software.png";
+import Triangle from "../../assets/pages/software-su-misura/triangolo.png";
+import Square from "../../assets/pages/software-su-misura/rettangolo.png";
+import Circle from "../../assets/pages/software-su-misura/cerchio.png";
 ---
 
 <Layout type="dark">
+    <Image
+        src={HeroImg}
+        alt="A sphere of sohostudio."
+        alt="Grad"
+        class="grad"
+    />
     <Page
         btnText="Parla con un developer"
         topTitle="Software su misura"
-        title="Automatizza i processi della tua azienda"
+        title="Software che lavora per te, non il contrario"
         type="dark"
-        subTitle="Creiamo applicazioni per soddisfare le esigenze specifiche della tua azienda. Dal concept allo sviluppo, offriamo soluzioni per ottimizzare il tuo business."
-    />
+        subTitle="Creiamo applicazioni su misura per gestire ordini, inventario, CRM o flussi interni, così puoi liberare tempo, ridurre errori e far crescere il business senza intoppi."
+    >
+        <div class="banner">
+            <h2>
+                Perchè hai bisogno di un nuovo software?<br />I 3 segnali
+                principali
+            </h2>
+            <div class="keys">
+                <div class="key">
+                    <Image src={Square} alt="Square" />
+                    <p>Perdi ore a correggere errori manuali</p>
+                </div>
+                <div class="key">
+                    <Image src={Triangle} alt="Triangle" />
+                    <p>
+                        I tuoi dipendenti usano 4 tool diversi per una sola
+                        attività.
+                    </p>
+                </div>
+                <div class="key">
+                    <Image src={Circle} alt="Circle" />
+                    <p>
+                        Hai bisogno di flessibilità, ma i software in
+                        abbonamento sono rigidi.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </Page>
 </Layout>
 
 <style>
     .grad {
         position: absolute;
         top: 0;
-        left: 50%;
-        transform: translate(-50%);
+        right: 0;
         z-index: -1;
         opacity: 0.7;
+        max-width: 780px;
+    }
+    .banner {
+        margin-top: 40px;
+    }
+    .banner h2 {
+        font-size: 45px;
+        line-height: 48px;
+        text-align: center;
+        font-family: "EB Garamond";
+        opacity: 0.8;
+    }
+    .key img {
+        max-width: 48px;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+    .keys {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        max-width: 700px;
+
+        margin: 0 auto;
+
+        margin-top: 60px;
+        margin-bottom: 140px;
+    }
+    .key p {
+        text-align: center;
+
+        max-width: 200px;
+        margin: 0 auto;
+
+        opacity: 0.7;
+    }
+    .key {
+        flex: 1;
     }
 </style>

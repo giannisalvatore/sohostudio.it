@@ -1,14 +1,307 @@
 ---
 import Page from "../../layouts/Page.astro";
 import Layout from "../../layouts/Layout.astro";
+
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import HeroImg from "../../assets/pages/marketing/hero.jpg";
+
+import Triangle from "../../assets/pages/software-su-misura/triangolo.png";
+import Square from "../../assets/pages/software-su-misura/rettangolo.png";
+import Circle from "../../assets/pages/software-su-misura/cerchio.png";
 ---
 
 <Layout type="light">
+    <Image src={HeroImg} alt="Marketing meeting" class="grad" />
+
     <Page
-        btnText="Parla con un nostro marketer"
-        topTitle="Marketing"
-        title="Trova nuovi clienti e cresci velocemente"
+        btnText="Parla con un esperto marketing"
+        topTitle="Marketing Digitale"
+        title="Risultati concreti per il tuo business online"
         type="light"
-        subTitle="Creiamo strategie di marketing su misura per aumentare la tua visibilità online e attrarre nuovi clienti."
-    />
+        subTitle="Più visibilità, più lead, più conversioni. Strategie di marketing digitale su misura per raggiungere i tuoi obiettivi."
+    >
+        <div class="banner">
+            <h2>Trasforma la tua presenza online in un motore di crescita</h2>
+            <div class="keys">
+                <div class="key">
+                    <Image src={Triangle} alt="Target" />
+                    <h3>+30% Lead Qualificati</h3>
+                    <p>
+                        Targettizzazione precisa e campagne mirate per generare
+                        un flusso costante di lead qualificati.
+                    </p>
+                </div>
+                <div class="key">
+                    <Image src={Square} alt="Strategy" />
+                    <h3>+20% Conversioni</h3>
+                    <p>
+                        Ottimizzazione delle campagne per massimizzare le
+                        conversioni e il ROI.
+                    </p>
+                </div>
+                <div class="key">
+                    <Image src={Circle} alt="Growth" />
+                    <h3>+40% Traffico Organico</h3>
+                    <p>
+                        Strategie SEO avanzate per migliorare il posizionamento
+                        e attrarre traffico organico qualificato.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Cosa possiamo fare per te</h2>
+
+        <div class="build">
+            <div class="row">
+                <div class="box">
+                    <Icon name="mdi:bullseye-arrow" class="icon" />
+                    <h3>Visibilità Online</h3>
+                    <p>
+                        Aumentiamo la tua presenza online con strategie SEO,
+                        content marketing e social media marketing.
+                    </p>
+                </div>
+                <div class="box">
+                    <Icon
+                        name="mdi:account-multiple-plus-outline"
+                        class="icon"
+                    />
+                    <h3>Lead Generation</h3>
+                    <p>
+                        Generiamo lead qualificati pronti per essere contattati
+                        dal tuo team di vendita.
+                    </p>
+                </div>
+                <div class="box">
+                    <Icon name="mdi:cash-multiple" class="icon" />
+                    <h3>Aumento Vendite</h3>
+                    <p>
+                        Strategie di marketing orientate alla conversione per
+                        trasformare i visitatori in clienti.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box">
+                    <Icon name="mdi:google" class="icon" />
+                    <h3>Google & Facebook Ads</h3>
+                    <p>
+                        Gestione e ottimizzazione delle tue campagne Google Ads
+                        per massimizzare il ROI.
+                    </p>
+                </div>
+                <div class="box">
+                    <Icon name="mdi:facebook" class="icon" />
+                    <h3>Social Media Management</h3>
+                    <p>
+                        Creazione di contenuti coinvolgenti per aumentare la
+                        brand awareness e generare lead.
+                    </p>
+                </div>
+                <div class="box">
+                    <Icon name="mdi:email-outline" class="icon" />
+                    <h3>Email Marketing</h3>
+                    <p>
+                        Nutriamo i tuoi lead, fidelizziamo i clienti e
+                        promuoviamo i tuoi prodotti/servizi via email.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box">
+                    <Icon name="mdi:funnel" class="icon" />
+                    <h3>Funnel di Vendita Personalizzati</h3>
+                    <p>
+                        Progettiamo funnel di vendita su misura per convertire
+                        visitatori in clienti. Analizziamo target, prodotti e
+                        mercato per massimizzare le vendite.
+                    </p>
+                </div>
+                <div class="box">
+                    <Icon
+                        name="mdi:file-document-multiple-outline"
+                        class="icon"
+                    />
+                    <h3>Landing Page Dedicate</h3>
+                    <p>
+                        Landing page specifiche per ogni servizio, ottimizzate
+                        per la conversione. Design accattivante, copy persuasivo
+                        e call to action efficace.
+                    </p>
+                </div>
+                <div class="box">
+                    <Icon name="mdi:chart-line" class="icon" />
+                    <h3>Report Dettagliati Settimanali</h3>
+                    <p>
+                        Report settimanali per monitorare le performance.
+                        Metriche chiave, analisi dati e insight per ottimizzare
+                        le strategie e raggiungere gli obiettivi.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline">
+            <h2>Come funziona</h2>
+            <div class="item">1. Analisi dei tuoi obiettivi</div>
+            <Icon name="mdi:arrow-down" />
+            <div class="item">2. Creiamo una strategia personalizzata</div>
+            <Icon name="mdi:arrow-down" />
+            <div class="item">3. Implementiamo i flussi di marketing</div>
+            <Icon name="mdi:arrow-down" />
+            <div class="item">4. Monitoriamo e ottimizziamo 7/7</div>
+            <Icon name="mdi:arrow-down" />
+            <div class="item">
+                5. Report dettagliato settimanale sull'andamento
+            </div>
+        </div>
+    </Page>
 </Layout>
+
+<style>
+    .grad {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%);
+        z-index: -1;
+        opacity: 0.6;
+        max-width: 800px;
+    }
+    .banner {
+        margin-top: 40px;
+    }
+    h2 {
+        font-size: 45px;
+        line-height: 48px;
+        text-align: center;
+        font-family: "EB Garamond";
+        opacity: 0.8;
+    }
+    .key img {
+        max-width: 48px;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+    .keys {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        max-width: 800px;
+
+        margin: 0 auto;
+
+        margin-top: 60px;
+        margin-bottom: 140px;
+        gap: 20px;
+    }
+    .key h3 {
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    .key p {
+        text-align: center;
+
+        max-width: 350px;
+        margin: 0 auto;
+
+        opacity: 0.7;
+    }
+    .key {
+        flex: 1;
+    }
+    .row {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+    .box {
+        background: #f3f3f3;
+        padding: 40px;
+        border-radius: 10px;
+        flex: 1;
+    }
+    .box svg {
+        height: 28px;
+        width: 28px;
+        margin-bottom: 15px;
+        opacity: 0.7;
+    }
+    .box h3 {
+        font-size: 35px;
+        font-family: "EB Garamond";
+        max-width: 70%;
+        line-height: 38px;
+        margin-bottom: 20px;
+    }
+    .box p {
+        font-size: 16px;
+        opacity: 0.7;
+        max-width: 70%;
+    }
+    .features h2 {
+        margin-bottom: 60px;
+    }
+    .features {
+        margin-bottom: 120px;
+    }
+    .timeline {
+        text-align: center;
+        margin-bottom: 120px;
+        margin-top: 120px;
+    }
+    .timeline h2 {
+        margin-bottom: 40px;
+    }
+    .timeline svg {
+        margin: 0 auto;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .item {
+        background: rgb(0, 0, 0, 0.03);
+        border: 1px solid rgb(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 20px 25px;
+        font-size: 16px;
+        max-width: 500px;
+        margin: 0 auto;
+        font-weight: 700;
+        color: rgb(0, 0, 0, 0.7);
+    }
+    .build h2 {
+        margin-bottom: 60px;
+    }
+    .grad2 {
+        position: absolute;
+        left: 0;
+        z-index: -1;
+    }
+    .banner {
+        text-align: center;
+        margin-bottom: 120px;
+    }
+    .banner h2 {
+        margin-bottom: 30px;
+    }
+    .section h3 {
+        font-weight: 300;
+        margin-bottom: 20px;
+
+        font-family: "EB Garamond";
+        font-size: 32px;
+    }
+    .section p {
+        opacity: 0.7;
+        max-width: 380px;
+    }
+    .section .left {
+        max-width: 50%;
+    }
+    .build {
+        margin-top: 120px;
+    }
+</style>

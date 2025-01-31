@@ -65,15 +65,6 @@ const sub = [
 
 <div class={`header ${type}`}>
     <div class="inner">
-        <div class="first">
-            <a href="/">
-                <Image
-                    src={type == "dark" ? logoWhite : logoBlack}
-                    alt="sohostudio logo black"
-                    class="logo"
-                />
-            </a>
-        </div>
         <div class="menu">
             <div class="item">
                 <NavigationMenu
@@ -84,24 +75,31 @@ const sub = [
                 />
             </div>
             <div class="item"><a href="/portfolio">Portfolio</a></div>
-            <hr />
             <div class="item"><a href="/mission">Valori</a></div>
             <div class="item"><a href="/team">Chi siamo</a></div>
-            <div class="item"><a href="/contatti">Contatti</a></div>
         </div>
-        <div class="last">
-            {
-                btnText ? (
-                    <Button>{btnText}</Button>
-                ) : (
-                    <Button>Richiedi un preventivo</Button>
-                )
-            }
+        <div class="first logoContainer">
+            <a href="/">
+                <Image
+                    src={type == "dark" ? logoWhite : logoBlack}
+                    alt="sohostudio logo black"
+                    class="logo"
+                />
+            </a>
+        </div>
+        <div class="menu">
+            <div class="item last"><a href="/contatti">Contatti</a></div>
         </div>
     </div>
 </div>
 
 <style>
+    .logoContainer {
+        text-align: center;
+    }
+    .logoContainer a {
+        display: inline-block;
+    }
     hr {
         opacity: 0.3;
     }
@@ -109,8 +107,7 @@ const sub = [
         flex: 1;
     }
     .menu {
-        flex: 2;
-        justify-content: center;
+        flex: 1;
     }
     .last {
         flex: 1;
@@ -148,12 +145,12 @@ const sub = [
     }
     .menu {
         display: flex;
-        gap: 28px;
+        gap: 18px;
         align-items: center;
 
         font-size: 14px;
 
-        font-weight: 700;
+        font-weight: 400;
     }
     .dark {
         color: #fff;

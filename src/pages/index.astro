@@ -9,154 +9,217 @@ import Header from "../components/Header.astro";
 import Logos from "../components/Logos.astro";
 import Button from "../components/Button.astro";
 import Footer from "../components/Footer.astro";
+
+import Shampora from "../assets/portfolio/shampora.jpg";
+import Podernuovo from "../assets/portfolio/podernuovo.jpg";
+import Hoppipolla from "../assets/portfolio/hoppipolla.jpeg";
+import Paros from "../assets/portfolio/paros.jpg";
+import Copihue from "../assets/portfolio/copihue.jpg";
+import Wave from "../assets/portfolio/wave.jpg";
+import Hyperlens from "../assets/portfolio/hyperlens.jpg";
+import Sello from "../assets/portfolio/sello.jpg";
+import Giuliana from "../assets/portfolio/giuliana.jpg";
+
+const portfolio = [
+    {
+        title: "Shampora",
+        description:
+            "Website · Art direction · UI/UX · Packaging · Photo & Video",
+        photo: Shampora,
+        alt: "Website / Art direction / UI/UX / Packaging / Photo & Video",
+    },
+    {
+        title: "Podernuovo by Giovanni Bulgari",
+        description: "Art Direction · Photography",
+        photo: Podernuovo,
+        alt: "",
+    },
+    {
+        title: "hoppípolla",
+        description: "Graphic Design · Photography",
+        photo: Hoppipolla,
+        alt: "",
+    },
+    {
+        title: "Hyperlens",
+        description: "Branding · Website · Backend",
+        photo: Hyperlens,
+        alt: "",
+    },
+    {
+        title: "Paros Architecture",
+        description: "Photography",
+        photo: Paros,
+        alt: "",
+    },
+    {
+        title: "Copihue Floral Studio",
+        description: "Art Direction · Photography · Video",
+        photo: Copihue,
+        alt: "",
+    },
+    {
+        title: "Sello",
+        description: "Branding · Website · Backend",
+        photo: Sello,
+        alt: "",
+    },
+    {
+        title: "Wave Market",
+        description: "Graphic Design · Photography",
+        photo: Wave,
+        alt: "",
+    },
+    {
+        title: "Giuliana Nardi",
+        description: "Photography",
+        photo: Giuliana,
+        alt: "",
+    },
+];
+
+const chunkArray = (arr, size) => {
+    return Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
+        arr.slice(i * size, i * size + size)
+    );
+};
+
+const chunkedPortfolio = chunkArray(portfolio, 3);
 ---
 
 <Layout>
     <Header type="dark" btnText="Chiedi un preventivo" />
     <div class="container">
-        <div class="hero">
-            <h1>
-                I brand non sono più solo prodotti: sono esperienze,
-                connessioni, emozioni. Creiamo soluzioni che trasformano le idee
-                in realtà, unendo innovazione e visione per far crescere il tuo
-                business come mai prima d'ora.
-            </h1>
-        </div>
-        <Logos />
-        <h2 class="bigTitle">
-            Realizziamo prodotti e servizi migliori che portano risultati
-        </h2>
-        <p class="subBigTitle">
-            Il segreto dei prodotti di successo è soltanto uno: risolvono
-            problemi reali, e lo fanno meglio della concorrenza.
-        </p>
-        <div class="rowBox">
-            <div class="box">
-                <h2>Costruiamo il tuo brand</h2>
+        <div class="black">
+            <div class="hero">
+                <h1>
+                    I brand non sono più solo prodotti: sono esperienze,
+                    connessioni, emozioni. Creiamo soluzioni che trasformano le
+                    idee in realtà, unendo innovazione e visione per far
+                    crescere il tuo business come mai prima d'ora.
+                </h1>
             </div>
-            <div class="box">
-                <h2>Dirigiamo le tue creatività</h2>
+            <Logos />
+            <div class="portfolio">
+                {
+                    chunkedPortfolio.map((group, rowIndex) => (
+                        <div class="row">
+                            {group.map((p, index) => (
+                                <div class="item" key={index}>
+                                    <p class="title">{p.title}</p>
+                                    <Image src={p.photo} alt={p.alt} />
+                                    <p class="description">{p.description}</p>
+                                </div>
+                            ))}
+                        </div>
+                    ))
+                }
             </div>
+            <Footer type="dark" />
         </div>
-        <div class="rowBox">
-            <div class="box">
-                <h2>
-                    Sviluppiamo software e app ad-hoc per le esigenze della tua
-                    azienda
-                </h2>
-            </div>
-        </div>
-        <div class="rowBox">
-            <div class="box">
-                <h2>Seguiamo il tuo marketing</h2>
-            </div>
-            <div class="box">
-                <h2>Creiamo funnel di vendita personalizzati</h2>
-            </div>
-        </div>
-        <div class="banner">
-            <h2 class="bigTitle">Raccontaci la tua idea pazzesca</h2>
-            <Button size="xl">Richiedi un preventivo gratuito</Button>
-        </div>
-        <Footer type="dark" />
+
+        <style>
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            body {
+                background: #111;
+            }
+            .bigTitle {
+                font-size: 45px;
+                line-height: 48px;
+                text-align: center;
+                font-family: "EB Garamond";
+                opacity: 0.8;
+                max-width: 600px;
+
+                color: #fff;
+                font-family: "EB Garamond", serif;
+                margin: 0 auto;
+                text-align: center;
+                margin-top: 30px;
+                opacity: 0.8;
+            }
+            .subBigTitle {
+                font-size: 20px;
+                text-align: center;
+                margin: 0 auto;
+                color: #fff;
+                opacity: 0.6;
+                max-width: 600px;
+                font-weight: 400;
+                margin-top: 30px;
+                margin-bottom: 100px;
+            }
+            h1 {
+                font-family: "EB Garamond", serif;
+                font-optical-sizing: auto;
+                font-style: normal;
+                color: #fff;
+                font-weight: 300;
+                font-size: 60px;
+                max-width: 900px;
+                line-height: 59px;
+                padding-top: 90px;
+                margin-bottom: 20px;
+            }
+            h1 * {
+                display: inline-block;
+            }
+            h1 svg {
+                line-height: 2px;
+            }
+            .subtitle {
+                color: #fff;
+                opacity: 0.6;
+                max-width: 340px;
+                font-size: 18px;
+                line-height: 30px;
+                margin-bottom: 40px;
+            }
+            .hero img {
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: -1;
+                opacity: 0.2;
+            }
+            .portfolio {
+                margin-top: 50px;
+            }
+            .portfolio img {
+                max-width: 100%;
+                border-radius: 10px;
+            }
+            .row {
+                display: flex;
+                gap: 20px;
+                margin-bottom: 30px;
+            }
+            .title {
+                color: #fff;
+                font-family: "EB Garamond";
+                font-size: 22px;
+                margin-bottom: 10px;
+            }
+            .description {
+                color: #fff;
+                opacity: 0.7;
+                font-weight: 300;
+                font-size: 14px;
+                margin-top: 15px;
+            }
+            .item {
+                flex: 1;
+            }
+            .item .title {
+                margin-top: 10px;
+            }
+            .portoflio hr {
+                margin-bottom: 20px;
+                border-color: red;
+            }
+        </style>
     </div>
-
-    <style>
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        body {
-            background: #111;
-        }
-        .bigTitle {
-            font-size: 45px;
-            line-height: 48px;
-            text-align: center;
-            font-family: "EB Garamond";
-            opacity: 0.8;
-            max-width: 600px;
-
-            color: #fff;
-            font-family: "EB Garamond", serif;
-            margin: 0 auto;
-            text-align: center;
-            margin-top: 30px;
-            opacity: 0.8;
-        }
-        .subBigTitle {
-            font-size: 20px;
-            text-align: center;
-            margin: 0 auto;
-            color: #fff;
-            opacity: 0.6;
-            max-width: 600px;
-            font-weight: 400;
-            margin-top: 30px;
-            margin-bottom: 100px;
-        }
-        h1 {
-            font-family: "EB Garamond", serif;
-            font-optical-sizing: auto;
-            font-style: normal;
-            color: #fff;
-            font-weight: 300;
-            font-size: 60px;
-            max-width: 900px;
-            line-height: 59px;
-            padding-top: 90px;
-            margin-bottom: 20px;
-        }
-        h1 * {
-            display: inline-block;
-        }
-        h1 svg {
-            line-height: 2px;
-        }
-        .subtitle {
-            color: #fff;
-            opacity: 0.6;
-            max-width: 340px;
-            font-size: 18px;
-            line-height: 30px;
-            margin-bottom: 40px;
-        }
-        .hero img {
-            position: absolute;
-            top: 0;
-            right: 0;
-            z-index: -1;
-            opacity: 0.7;
-        }
-        .rowBox {
-            display: flex;
-            gap: 25px;
-            margin-bottom: 25px;
-        }
-        .box {
-            background: #181818;
-            color: #fff;
-            font-family: "EB Garamond", serif;
-            flex: 1;
-
-            padding: 45px;
-            font-size: 40px;
-            line-height: 45px;
-
-            border-radius: 10px;
-
-            min-height: 360px;
-        }
-        .box h2 {
-            max-width: 420px;
-        }
-        .banner {
-            margin-top: 120px;
-            margin-bottom: 120px;
-            text-align: center;
-        }
-        .banner h2 {
-            margin-bottom: 40px;
-        }
-    </style>
 </Layout>

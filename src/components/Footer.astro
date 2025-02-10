@@ -10,7 +10,7 @@ import Button from "../components/Button.astro";
 ---
 
 <div class=`footer ${type}`>
-    <div class="row">
+    <div class="row f">
         <div class="first">
             <a href="/">
                 <Image
@@ -102,7 +102,7 @@ import Button from "../components/Button.astro";
             padding: 40px;
         }
         .last {
-            font-size: 12px;
+            font-size: 13px;
             line-height: 14px;
             padding-bottom: 0 !important;
             height: 18px;
@@ -112,6 +112,29 @@ import Button from "../components/Button.astro";
             opacity: 0.5;
             font-size: 18px;
             margin-bottom: 10px;
+        }
+        .row.last {
+            display: block;
+            text-align: center;
+            padding-bottom: 30px;
+            height: 60px;
+        }
+        .row.last .last {
+            margin-top: 10px;
+            justify-content: center;
+        }
+        .row.f {
+            display: block;
+        }
+        .row.f .logo {
+            margin-bottom: 15px;
+        }
+        .footer * {
+            text-align: center;
+            justify-content: center;
+        }
+        .logo {
+            margin: 0 auto;
         }
     }
 </style>

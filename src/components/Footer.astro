@@ -76,7 +76,6 @@ import Button from "../components/Button.astro";
         justify-content: space-between;
     }
     h2 {
-        font-family: "EB Garamond";
         font-size: 40px;
         opacity: 0.8;
         margin-bottom: 20px;
@@ -92,7 +91,27 @@ import Button from "../components/Button.astro";
     .or {
         opacity: 0.5;
     }
+    .row {
+        align-items: center;
+    }
     .row.last {
         opacity: 0.5;
+    }
+    @media screen and (max-width: 880px) {
+        .footer {
+            padding: 40px;
+        }
+        .last {
+            font-size: 12px;
+            line-height: 14px;
+            padding-bottom: 0 !important;
+            height: 18px;
+            margin-bottom: -5px;
+        }
+        h2 {
+            opacity: 0.5;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
     }
 </style>

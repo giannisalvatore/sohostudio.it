@@ -10,12 +10,24 @@ import Sisal from "../assets/logos/sisal.png";
 
 <div class="logos">
     <div class="list">
-        <Image src={Sisal} alt="Sisal logo" />
-        <Image src={Doppelganger} alt="Doppelganger logo" />
-        <Image src={Makerfaire} alt="Makerfaire logo" />
-        <Image src={Shampora} alt="Shampora logo" />
-        <Image src={Hoppipolla} alt="Hoppipolla logo" />
-        <Image src={Sello} alt="Sello logo" />
+        <div>
+            <Image src={Sisal} alt="Sisal logo" />
+        </div>
+        <div>
+            <Image src={Doppelganger} alt="Doppelganger logo" />
+        </div>
+        <div>
+            <Image src={Makerfaire} alt="Makerfaire logo" />
+        </div>
+        <div>
+            <Image src={Shampora} alt="Shampora logo" />
+        </div>
+        <div>
+            <Image class="nomobile" src={Hoppipolla} alt="Hoppipolla logo" />
+        </div>
+        <div>
+            <Image class="nomobile" src={Sello} alt="Sello logo" />
+        </div>
     </div>
 </div>
 
@@ -35,5 +47,17 @@ import Sisal from "../assets/logos/sisal.png";
         max-height: 32px;
         height: auto;
         width: auto;
+    }
+    @media screen and (max-width: 880px) {
+        .nomobile {
+            display: none;
+        }
+        .logos img {
+            max-width: 100%;
+        }
+        .logos {
+            margin-top: 60px;
+            padding-bottom: 30px;
+        }
     }
 </style>

@@ -1,11 +1,13 @@
 ---
 import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 
 import logoBlack from "../assets/logo_black.svg";
 import logoWhite from "../assets/logo_white.svg";
 
 import NavigationMenu from "./NavigationMenu.jsx";
-import Button from "../components/Button.astro";
+
+import MenuIcon from "../assets/menu.svg";
 
 import Grad01 from "../assets/categoryLogos/Grad_01.png";
 import Grad02 from "../assets/categoryLogos/Grad_02.png";
@@ -16,7 +18,7 @@ import Grad06 from "../assets/categoryLogos/Grad_06.png";
 import Grad13 from "../assets/categoryLogos/Grad_13.png";
 import Grad10 from "../assets/categoryLogos/Grad_10.png";
 
-const { type, btnText } = Astro.props;
+const { type } = Astro.props;
 const sub = [
     {
         title: "Branding, Creatività & Design",
@@ -63,7 +65,25 @@ const sub = [
 ];
 ---
 
-<div class={`header ${type}`}>
+<div class={`header ${type} mobile`}>
+    <div class="inner">
+        <div class="menuContainer"><Image src={MenuIcon} alt="" /></div>
+        <div class="first logoContainer">
+            <a href="/">
+                <Image
+                    src={type == "dark" ? logoWhite : logoBlack}
+                    alt="sohostudio logo black"
+                    class="logo"
+                />
+            </a>
+        </div>
+        <div class="menu">
+            <div class="item last"><a href="/contatti">Contatti</a></div>
+        </div>
+    </div>
+</div>
+
+<div class={`header ${type} desktop`}>
     <div class="inner">
         <div class="menu">
             <div class="item">
@@ -94,6 +114,12 @@ const sub = [
 </div>
 
 <style>
+    .desktop {
+        display: block;
+    }
+    .mobile {
+        display: none;
+    }
     .logoContainer {
         text-align: center;
     }
@@ -190,5 +216,20 @@ const sub = [
         align-items: center;
 
         margin-top: -5px;
+    }
+    @media screen and (max-width: 880px) {
+        .header.desktop {
+            display: none;
+        }
+        .header.mobile {
+            display: block;
+        }
+        .inner {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        .inner > div {
+            flex: 1;
+        }
     }
 </style>

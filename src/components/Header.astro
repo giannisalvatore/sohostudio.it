@@ -86,7 +86,6 @@ const sub = [
     </div>
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-inner">
-            <button class="close-menu" id="closeMenu">&times;</button>
             <a href="/servizi/creativita-branding-design">Branding, Creatività & Design</a>
             <a href="/servizi/software-su-misura">Software su misura</a>
             <a href="/servizi/intelligenza-artificiale">Intelligenza artificiale</a>
@@ -177,17 +176,6 @@ const sub = [
         text-align: center;
         position: relative;
         margin-top: 5vh;
-    }
-    .close-menu {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background: none;
-        border: none;
-        font-size: 2rem;
-        color: hsl(var(--foreground));
-        cursor: pointer;
-        z-index: 1001;
     }
     .mobile-menu-inner a {
         display: block;
@@ -291,8 +279,9 @@ const sub = [
     .menuContainer {
         cursor: pointer;
         position: relative;
-        width: 24px;
-        height: 24px;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
     }
     .hamburger {
         display: block;
@@ -306,7 +295,7 @@ const sub = [
     }
     .close-icon {
         display: none;
-        font-size: 2rem;
+        font-size: 1.5rem;
         color: hsl(var(--foreground));
         position: absolute;
         top: 50%;
@@ -329,7 +318,6 @@ const sub = [
     document.addEventListener('DOMContentLoaded', function() {
         const menuToggle = document.getElementById('menuToggle');
         const mobileMenu = document.getElementById('mobileMenu');
-        const closeMenu = document.getElementById('closeMenu');
         const header = document.querySelector('.header.mobile');
         
         if (menuToggle && mobileMenu) {
@@ -338,14 +326,6 @@ const sub = [
                 header.classList.toggle('menu-open');
                 document.body.classList.toggle('no-scroll');
             });
-            
-            if (closeMenu) {
-                closeMenu.addEventListener('click', function() {
-                    mobileMenu.classList.remove('open');
-                    header.classList.remove('menu-open');
-                    document.body.classList.remove('no-scroll');
-                });
-            }
             
             // Close menu when clicking outside
             mobileMenu.addEventListener('click', function(event) {

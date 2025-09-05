@@ -4,5 +4,80 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-    <Page type="light" btnText="Parla con un designer"> ciao </Page>
+    <Page type="light" btnText="Parla con un designer">
+        <div class="blog-intro">
+            <h2>Il nostro blog</h2>
+            <p>Scopri le ultime novità, consigli e insights sul mondo del design, sviluppo e marketing digitale.</p>
+        </div>
+        <div class="blog-posts">
+            <article class="post">
+                <h3>Innovazione nel Design Digitale</h3>
+                <p>Esplora come le nuove tecnologie stanno trasformando il modo in cui creiamo esperienze utente eccezionali.</p>
+                <a href="#" class="read-more">Leggi di più</a>
+            </article>
+            <article class="post">
+                <h3>Strategie di Marketing Efficaci</h3>
+                <p>Guida pratica per aumentare la visibilità online e convertire lead in clienti fedeli.</p>
+                <a href="#" class="read-more">Leggi di più</a>
+            </article>
+            <article class="post">
+                <h3>Sviluppo Software su Misura</h3>
+                <p>Perché scegliere soluzioni personalizzate invece di prodotti off-the-shelf per il tuo business.</p>
+                <a href="#" class="read-more">Leggi di più</a>
+            </article>
+        </div>
+    </Page>
 </Layout>
+
+<style>
+    .blog-intro {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    .blog-intro h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        font-weight: 300;
+    }
+    .blog-intro p {
+        font-size: 1.2rem;
+        color: #666;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .blog-posts {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+    }
+    .post {
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        transition: transform 0.3s ease;
+    }
+    .post:hover {
+        transform: translateY(-5px);
+    }
+    .post h3 {
+        margin-bottom: 15px;
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+    .post p {
+        margin-bottom: 20px;
+        color: #555;
+        line-height: 1.6;
+    }
+    .read-more {
+        color: #000;
+        text-decoration: none;
+        font-weight: bold;
+        border-bottom: 2px solid #000;
+        padding-bottom: 2px;
+        transition: border-color 0.3s ease;
+    }
+    .read-more:hover {
+        border-color: #666;
+    }
+</style>

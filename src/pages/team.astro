@@ -1,14 +1,102 @@
 ---
 import Page from "../layouts/Page.astro";
 import Layout from "../layouts/Layout.astro";
+
+const teamMembers = [
+    {
+        name: "Gianni Salvatore",
+        role: "Founder, CEO & Developer",
+        bio: "Visionario digitale con un occhio per l'innovazione, Gianni guida sohostudio con una passione sfrenata per il codice e il design. Trasforma idee audaci in realtà tecnologiche, sempre un passo avanti nel mondo del digitale.",
+    },
+    {
+        name: "Viola Carboni",
+        role: "Designer & Fotografa",
+        bio: "Artista poliedrica che cattura l'essenza della bellezza attraverso l'obiettivo e il design. Viola crea esperienze visive che parlano al cuore, fondendo creatività e tecnica in progetti che lasciano il segno.",
+    },
+];
 ---
 
 <Layout type="light">
     <Page
-        btnText="Parla con un nostro marketer"
+        btnText="Parla con noi"
         topTitle="Chi siamo"
         title="Il nostro team è il valore di sohostudio"
         type="light"
         subTitle="Professionisti con esperienza nel settore che hanno saputo innovare e crescere continuamente nelle loro aree di expertise."
-    />
+    >
+        <div class="team-grid">
+            {teamMembers.map((member) => (
+                <div class="member-card">
+                    <div class="avatar">
+                        <span>{member.name.split(' ').map(n => n[0]).join('')}</span>
+                    </div>
+                    <h3>{member.name}</h3>
+                    <p class="role">{member.role}</p>
+                    <p class="bio">{member.bio}</p>
+                    <a href="/contatti" class="contact-link">Contatta {member.name.split(' ')[0]}</a>
+                </div>
+            ))}
+        </div>
+    </Page>
 </Layout>
+
+<style>
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        margin-top: 40px;
+    }
+    .member-card {
+        text-align: center;
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        transition: transform 0.3s ease;
+    }
+    .member-card:hover {
+        transform: translateY(-5px);
+    }
+    .avatar {
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(135deg, #000, #333);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 0 auto 20px;
+    }
+    .member-card h3 {
+        margin-bottom: 10px;
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+    .role {
+        color: #000;
+        font-weight: bold;
+        margin-bottom: 15px;
+        font-size: 1rem;
+    }
+    .bio {
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    .contact-link {
+        display: inline-block;
+        margin-top: 15px;
+        color: #000;
+        text-decoration: none;
+        font-weight: bold;
+        border-bottom: 2px solid #000;
+        padding-bottom: 2px;
+        transition: border-color 0.3s ease;
+    }
+    .contact-link:hover {
+        border-color: #666;
+    }
+</style>

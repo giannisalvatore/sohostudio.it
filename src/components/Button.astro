@@ -13,13 +13,17 @@ const { size = "m", type = "cta" } = Astro.props;
 <style>
     button {
         font-family: "Satoshi";
-        background: #212121;
+        background: #000;
         border: 0;
         color: #fff;
         padding: 12px 17px;
         font-size: 14px;
         font-weight: 700;
         border-radius: 3px;
+        transition: background 0.3s ease;
+    }
+    button:hover {
+        background: #333;
     }
     .xl {
         font-size: 26px;
@@ -34,9 +38,9 @@ const { size = "m", type = "cta" } = Astro.props;
         padding: 13px 20px;
     }
     .cta {
-        background: #684ec5;
+        background: #000;
     }
     .secondary {
-        background: #111;
+        background: #000;
     }
 </style>

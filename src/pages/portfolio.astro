@@ -136,4 +136,19 @@ const projects = [
     .project-link:hover {
         border-color: #666;
     }
+    @media screen and (max-width: 768px) {
+        .portfolio-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        .project-card h3 {
+            font-size: 1.2rem;
+        }
+        .project-card p {
+            font-size: 0.9rem;
+        }
+        .project-card {
+            margin: 0 10px;
+        }
+    }
 </style>

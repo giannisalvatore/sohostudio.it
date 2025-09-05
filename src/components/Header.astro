@@ -192,10 +192,10 @@ const sub = [
     .mobile-menu-inner a {
         display: block;
         font-family: "EB Garamond", serif;
-        font-size: 2rem;
+        font-size: 1.5rem;
         color: hsl(var(--foreground));
         text-decoration: none;
-        margin: 20px 0;
+        margin: 15px 0;
         transition: color 0.3s ease;
     }
     .mobile-menu-inner a:hover {
@@ -297,6 +297,12 @@ const sub = [
     .hamburger {
         display: block;
         margin-top: 7px;
+    }
+    .header.light .hamburger {
+        filter: brightness(0);
+    }
+    .header.dark .hamburger {
+        filter: brightness(1);
     }
     .close-icon {
         display: none;

@@ -108,7 +108,7 @@ const sub = [
                     type={type}
                     item={"Servizi"}
                     sub={sub}
-                    client:load
+                    client:only="react"
                 />
             </div>
             <div class="item"><a href="/portfolio">Portfolio</a></div>
@@ -336,68 +336,80 @@ const sub = [
         const header = document.querySelector('.header.mobile');
         
         if (!menuToggle || !mobileMenu || !header) {
-            console.warn('Menu elements not found');
             return;
         }
         
-        let scrollPosition = 0;
-        
-        // Remove existing listeners before adding new ones
-        const newMenuToggle = menuToggle.cloneNode(true);
-        if (menuToggle.parentNode) {
-            menuToggle.parentNode.replaceChild(newMenuToggle, menuToggle);
+        // Skip if already initialized (check for marker attribute)
+        if (menuToggle.hasAttribute('data-menu-initialized')) {
+            return;
         }
         
-        newMenuToggle.addEventListener('click', function(e) {
+        // Mark as initialized
+        menuToggle.setAttribute('data-menu-initialized', 'true');
+        
+        let scrollPosition = 0;
+        
+        function openMenu() {
+            scrollPosition = window.pageYOffset;
+            mobileMenu.classList.add('open');
+            header.classList.add('menu-open');
+            document.body.style.top = `-${scrollPosition}px`;
+            document.body.classList.add('no-scroll');
+        }
+        
+        function closeMenu() {
+            mobileMenu.classList.remove('open');
+            header.classList.remove('menu-open');
+            document.body.classList.remove('no-scroll');
+            document.body.style.top = '';
+            window.scrollTo(0, scrollPosition);
+        }
+        
+        menuToggle.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
             
             const isOpen = mobileMenu.classList.contains('open');
             
             if (isOpen) {
-                // Chiudi menu
-                mobileMenu.classList.remove('open');
-                header.classList.remove('menu-open');
-                document.body.classList.remove('no-scroll');
-                document.body.style.top = '';
-                window.scrollTo(0, scrollPosition);
+                closeMenu();
             } else {
-                // Apri menu
-                scrollPosition = window.pageYOffset;
-                mobileMenu.classList.add('open');
-                header.classList.add('menu-open');
-                document.body.style.top = `-${scrollPosition}px`;
-                document.body.classList.add('no-scroll');
+                openMenu();
             }
         });
         
         // Close menu when clicking on a link
         const menuLinks = mobileMenu.querySelectorAll('a');
         menuLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.remove('open');
-                header.classList.remove('menu-open');
-                document.body.classList.remove('no-scroll');
-                document.body.style.top = '';
-                window.scrollTo(0, scrollPosition);
-            });
+            link.addEventListener('click', closeMenu);
         });
         
         // Close menu when clicking outside
         mobileMenu.addEventListener('click', function(event) {
             if (event.target === mobileMenu) {
-                mobileMenu.classList.remove('open');
-                header.classList.remove('menu-open');
-                document.body.classList.remove('no-scroll');
-                document.body.style.top = '';
-                window.scrollTo(0, scrollPosition);
+                closeMenu();
             }
         });
     }
     
     // Initialize on load
-    document.addEventListener('DOMContentLoaded', initMobileMenu);
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMobileMenu);
+    } else {
+        initMobileMenu();
+    }
     
     // Re-initialize after Astro page transitions
     document.addEventListener('astro:page-load', initMobileMenu);
+    
+    // Clean up on before swap to prevent duplicate listeners
+    document.addEventListener('astro:before-swap', () => {
+        const menuToggle = document.getElementById('menuToggle');
+        if (menuToggle) {
+            menuToggle.removeAttribute('data-menu-initialized');
+        }
+        // Reset body scroll state
+        document.body.classList.remove('no-scroll');
+        document.body.style.top = '';
+    });
 </script>

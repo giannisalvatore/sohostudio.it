@@ -3,7 +3,9 @@ import { SEO } from "astro-seo";
 import seoData from "../data/seo.json";
 
 const { pathname } = Astro.url;
-const seo = (seoData as Record<string, any>)[pathname] || seoData.default;
+// Normalizza il pathname rimuovendo trailing slash (eccetto per la home)
+const normalizedPath = pathname === '/' ? '/' : pathname.replace(/\/$/, '');
+const seo = (seoData as Record<string, any>)[normalizedPath] || seoData.default;
 ---
 
 <SEO

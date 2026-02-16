@@ -65,7 +65,7 @@ const sub = [
 ];
 ---
 
-<div class={`header ${type} mobile`}>
+<div class={`header ${type} mobile`} transition:persist="mobile-header">
     <div class="inner">
         <div class="menuContainer" id="menuToggle">
             <Image src={MenuIcon} alt="Menu di navigazione" class="hamburger" />
@@ -74,9 +74,14 @@ const sub = [
         <div class="first logoContainer">
             <a href="/">
                 <Image
-                    src={type == "dark" ? logoWhite : logoBlack}
-                    alt="sohostudio logo black"
-                    class="logo"
+                    src={logoWhite}
+                    alt="sohostudio logo"
+                    class="logo logo-white"
+                />
+                <Image
+                    src={logoBlack}
+                    alt="sohostudio logo"
+                    class="logo logo-black"
                 />
             </a>
         </div>
@@ -100,15 +105,15 @@ const sub = [
     </div>
 </div>
 
-<div class={`header ${type} desktop`}>
+<div class={`header ${type} desktop`} transition:persist="desktop-header">
     <div class="inner">
         <div class="menu">
-            <div class="item">
+            <div class="item" id="nav-menu-wrapper" data-nav-type={type}>
                 <NavigationMenu
                     type={type}
                     item={"Servizi"}
                     sub={sub}
-                    client:only="react"
+                    client:load
                 />
             </div>
             <div class="item"><a href="/portfolio">Portfolio</a></div>
@@ -118,9 +123,14 @@ const sub = [
         <div class="first logoContainer">
             <a href="/">
                 <Image
-                    src={type == "dark" ? logoWhite : logoBlack}
-                    alt="sohostudio logo black"
-                    class="logo"
+                    src={logoWhite}
+                    alt="sohostudio logo"
+                    class="logo logo-white"
+                />
+                <Image
+                    src={logoBlack}
+                    alt="sohostudio logo"
+                    class="logo logo-black"
                 />
             </a>
         </div>
@@ -142,6 +152,21 @@ const sub = [
     }
     .logoContainer a {
         display: inline-block;
+    }
+    .logo {
+        display: block;
+    }
+    .header.dark .logo-black {
+        display: none;
+    }
+    .header.dark .logo-white {
+        display: block;
+    }
+    .header.light .logo-white {
+        display: none;
+    }
+    .header.light .logo-black {
+        display: block;
     }
     hr {
         opacity: 0.3;
@@ -411,5 +436,23 @@ const sub = [
         // Reset body scroll state
         document.body.classList.remove('no-scroll');
         document.body.style.top = '';
+    });
+    
+    // Update header type after page transitions
+    document.addEventListener('astro:after-swap', () => {
+        const newBodyClass = document.body.className;
+        const headers = document.querySelectorAll('.header.desktop, .header.mobile');
+        
+        headers.forEach(header => {
+            // Remove both classes first
+            header.classList.remove('dark', 'light');
+            
+            // Add the correct class based on body
+            if (newBodyClass.includes('dark')) {
+                header.classList.add('dark');
+            } else if (newBodyClass.includes('light')) {
+                header.classList.add('light');
+            }
+        });
     });
 </script>

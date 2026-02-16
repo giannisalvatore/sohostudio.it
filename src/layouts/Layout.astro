@@ -1,7 +1,6 @@
 ---
 const { type } = Astro.props;
 import "@/styles/globals.css";
-import { ClientRouter } from "astro:transitions";
 
 import SeoManager from "@/components/SeoManager.astro";
 import Schema from "@/components/Schema.astro";
@@ -27,7 +26,6 @@ import Schema from "@/components/Schema.astro";
             <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet" />
         </noscript>
         
-        <ClientRouter />
         <SeoManager />
         <Schema />
     </head>

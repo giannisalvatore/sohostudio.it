@@ -74,14 +74,9 @@ const sub = [
         <div class="first logoContainer">
             <a href="/">
                 <Image
-                    src={logoWhite}
+                    src={type == "dark" ? logoWhite : logoBlack}
                     alt="sohostudio logo"
-                    class="logo logo-white"
-                />
-                <Image
-                    src={logoBlack}
-                    alt="sohostudio logo"
-                    class="logo logo-black"
+                    class="logo"
                 />
             </a>
         </div>
@@ -123,14 +118,9 @@ const sub = [
         <div class="first logoContainer">
             <a href="/">
                 <Image
-                    src={logoWhite}
+                    src={type == "dark" ? logoWhite : logoBlack}
                     alt="sohostudio logo"
-                    class="logo logo-white"
-                />
-                <Image
-                    src={logoBlack}
-                    alt="sohostudio logo"
-                    class="logo logo-black"
+                    class="logo"
                 />
             </a>
         </div>
@@ -152,21 +142,6 @@ const sub = [
     }
     .logoContainer a {
         display: inline-block;
-    }
-    .logo {
-        display: block;
-    }
-    .header.dark .logo-black {
-        display: none;
-    }
-    .header.dark .logo-white {
-        display: block;
-    }
-    .header.light .logo-white {
-        display: none;
-    }
-    .header.light .logo-black {
-        display: block;
     }
     hr {
         opacity: 0.3;
@@ -355,23 +330,11 @@ const sub = [
 </style>
 
 <script>
-    function initMobileMenu() {
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const header = document.querySelector('.header.mobile');
-        
-        if (!menuToggle || !mobileMenu || !header) {
-            return;
-        }
-        
-        // Skip if already initialized (check for marker attribute)
-        if (menuToggle.hasAttribute('data-menu-initialized')) {
-            return;
-        }
-        
-        // Mark as initialized
-        menuToggle.setAttribute('data-menu-initialized', 'true');
-        
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const header = document.querySelector('.header.mobile');
+    
+    if (menuToggle && mobileMenu && header) {
         let scrollPosition = 0;
         
         function openMenu() {
@@ -415,12 +378,5 @@ const sub = [
                 closeMenu();
             }
         });
-    }
-    
-    // Initialize on load
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initMobileMenu);
-    } else {
-        initMobileMenu();
     }
 </script>

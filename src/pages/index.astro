@@ -3,14 +3,10 @@ import { Image } from "astro:assets";
 
 import Layout from "../layouts/Layout.astro";
 
-import HeroImg from "../assets/hero/home.png";
-
 import Header from "../components/Header.astro";
 import Logos from "../components/Logos.astro";
-import Button from "../components/Button.astro";
 import Footer from "../components/Footer.astro";
 
-import Shampora from "../assets/portfolio/shampora.jpg";
 import Podernuovo from "../assets/portfolio/podernuovo.jpg";
 import Hoppipolla from "../assets/portfolio/hoppipolla.jpeg";
 import Paros from "../assets/portfolio/paros.jpg";
@@ -24,61 +20,61 @@ const portfolio = [
     {
         title: "Attivita24",
         description: "Proprietary Platform",
+        details: "Piattaforma per annunci che connette compratori e venditori in tempo reale. Marketplace intuitivo che semplifica la compravendita con sistema di matching intelligente.",
         photo: Attivita24,
         alt: "Attivita24 project",
     },
     {
         title: "Podernuovo by Giovanni Bulgari",
         description: "Art Direction · Photography",
+        details: "Progetto di art direction e fotografia per il brand di lusso di Giovanni Bulgari. Immagini che raccontano l'eccellenza e l'heritage Made in Italy.",
         photo: Podernuovo,
-        alt: "",
+        alt: "Podernuovo by Giovanni Bulgari project",
     },
     {
         title: "hoppípolla",
         description: "Graphic Design · Photography",
+        details: "Identità visiva completa e servizio fotografico per brand lifestyle. Design contemporaneo che unisce minimalismo e personalità distintiva.",
         photo: Hoppipolla,
-        alt: "",
+        alt: "hoppípolla project",
     },
     {
         title: "Hyperlens",
         description: "Website · Backend · Marketing",
+        details: "Sviluppo full-stack di piattaforma tech con focus sulla user experience. Backend scalabile e strategie di marketing data-driven per massimizzare la crescita.",
         photo: Hyperlens,
-        alt: "",
+        alt: "Hyperlens project",
     },
     {
         title: "Paros Architecture",
         description: "Photography",
+        details: "Portfolio fotografico per studio di architettura contemporanea. Scatti che valorizzano linee, volumi e la relazione tra spazi e luce naturale.",
         photo: Paros,
-        alt: "",
+        alt: "Paros Architecture project",
     },
     {
         title: "Copihue Floral Studio",
         description: "Art Direction · Photography · Video",
+        details: "Progetto visual completo per floral designer boutique. Art direction, fotografia prodotto e video per social media che catturano l'essenza del brand.",
         photo: Copihue,
-        alt: "",
+        alt: "Copihue Floral Studio project",
     },
     {
         title: "Wave Market",
         description: "Graphic Design · Photography",
+        details: "Brand identity e servizio fotografico per marketplace innovativo. Design system coerente che comunica freschezza e affidabilità.",
         photo: Wave,
-        alt: "",
+        alt: "Wave Market project",
     },
     {
         title: "Giuliana Nardi",
         description: "Photography",
+        details: "Portfolio fotografico per artista contemporanea. Immagini che esplorano il confine tra moda, arte e narrazione visiva.",
         photo: Giuliana,
-        alt: "",
+        alt: "Giuliana Nardi Photography project",
     },
 ];
 
-const chunkArray = (arr: any[], size: number) => {
-    return Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
-        arr.slice(i * size, i * size + size)
-    );
-};
-
-const chunkedPortfolio = chunkArray(portfolio, 3);
-const chunkedPortfolioMobile = chunkArray(portfolio, 1);
 ---
 
 <Layout>
@@ -109,32 +105,32 @@ const chunkedPortfolioMobile = chunkArray(portfolio, 1);
                 </div>
             </div>
             <Logos />
-            <div class="portfolio desktop">
+            <div class="portfolio-accordion">
                 {
-                    chunkedPortfolio.map((group: any) => (
-                        <div class="row">
-                            {group.map((p: any, index: number) => (
-                                <div class="item">
-                                    <p class="title">{p.title}</p>
-                                    <Image src={p.photo} alt={p.alt || p.title} loading="lazy" />
-                                    <p class="description">{p.description}</p>
+                    portfolio.map((project, index) => (
+                        <div class="accordion-item" data-index={index}>
+                            <button class="accordion-header">
+                                <div class="header-content">
+                                    <span class="project-number">{String(index + 1).padStart(2, '0')}</span>
+                                    <h3 class="project-title">{project.title}</h3>
                                 </div>
-                            ))}
-                        </div>
-                    ))
-                }
-            </div>
-            <div class="portfolio mobile">
-                {
-                    chunkedPortfolioMobile.map((group: any) => (
-                        <div class="row">
-                            {group.map((p: any, index: number) => (
-                                <div class="item">
-                                    <p class="title">{p.title}</p>
-                                    <Image src={p.photo} alt={p.alt || p.title} loading="lazy" />
-                                    <p class="description">{p.description}</p>
+                                <div class="accordion-arrow">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
                                 </div>
-                            ))}
+                            </button>
+                            <div class="accordion-content">
+                                <div class="content-inner">
+                                    <div class="project-info">
+                                        <p class="project-type">{project.description}</p>
+                                        <p class="project-description">{project.details}</p>
+                                    </div>
+                                    <div class="project-image">
+                                        <Image src={project.photo} alt={project.alt || project.title} loading="lazy" />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     ))
                 }
@@ -158,47 +154,39 @@ const chunkedPortfolioMobile = chunkArray(portfolio, 1);
         .intro-content {
             margin-top: 30px;
             margin-bottom: 40px;
-        }
-        .intro-content p {
             display: none;
         }
-        .bigTitle {
-            font-size: 24px;
-            line-height: 28px;
-            margin-top: 20px;
-        }
-        .subBigTitle {
-            font-size: 16px;
-            margin-top: 20px;
-            margin-bottom: 50px;
-        }
-        .title {
-            font-size: 18px;
-        }
-        .description {
-            font-size: 12px;
-            margin-top: 10px;
-        }
-        .mobile {
-            display: block;
-        }
-        .desktop {
+        .intro-content p {
             display: none;
         }
         .hero{
             padding: 0;
         }
+        .project-number {
+            font-size: 14px;
+        }
+        .project-title {
+            font-size: 20px;
+        }
+        .content-inner {
+            flex-direction: column;
+            gap: 25px;
+            padding-left: 40px;
+        }
+        .project-info {
+            max-width: 100%;
+        }
+        .project-image {
+            max-width: 100%;
+        }
+        .project-description {
+            font-size: 15px;
+            line-height: 1.6;
+        }
     }
 </style>
 
 <style>
-    .mobile {
-        display: none;
-    }
-    .desktop {
-        display: block;
-    }
-
     .container {
         max-width: 1300px;
         padding-left: 50px;
@@ -207,32 +195,6 @@ const chunkedPortfolioMobile = chunkArray(portfolio, 1);
     }
     body {
         background: #111;
-    }
-    .bigTitle {
-        font-size: 45px;
-        line-height: 48px;
-        text-align: center;
-        font-family: "EB Garamond";
-        opacity: 0.8;
-        max-width: 600px;
-
-        color: #fff;
-        font-family: "EB Garamond", serif;
-        margin: 0 auto;
-        text-align: center;
-        margin-top: 30px;
-        opacity: 0.8;
-    }
-    .subBigTitle {
-        font-size: 20px;
-        text-align: center;
-        margin: 0 auto;
-        color: #fff;
-        opacity: 0.6;
-        max-width: 600px;
-        font-weight: 400;
-        margin-top: 30px;
-        margin-bottom: 100px;
     }
     h1 {
         font-family: "EB Garamond", serif;
@@ -260,65 +222,161 @@ const chunkedPortfolioMobile = chunkArray(portfolio, 1);
         opacity: 1;
         font-weight: 500;
     }
-    h1 * {
-        display: inline-block;
-    }
-    h1 svg {
-        line-height: 2px;
-    }
-    .subtitle {
-        color: #fff;
-        opacity: 0.6;
-        max-width: 340px;
-        font-size: 18px;
-        line-height: 30px;
-        margin-bottom: 40px;
-    }
-    .hero img {
-        position: absolute;
-        top: 0;
-        right: 0;
-        z-index: -1;
-        opacity: 0.2;
-    }
-    .portfolio {
-        margin-top: 50px;
-    }
-    .portfolio img {
-        max-width: 100%;
-        border-radius: 10px;
-    }
-    .row {
-        display: flex;
-        gap: 20px;
-        margin-bottom: 30px;
-    }
-    .title {
-        color: #fff;
-        font-family: "EB Garamond";
-        font-size: 22px;
-        margin-bottom: 10px;
-    }
-    .description {
-        color: #fff;
-        opacity: 0.7;
-        font-weight: 300;
-        font-size: 14px;
-        margin-top: 15px;
-    }
-    .item {
-        flex: 1;
-    }
-    .item .title {
-        margin-top: 10px;
-    }
-    .portoflio hr {
-        margin-bottom: 20px;
-        border-color: red;
-    }
     .hero{
         display: flex;
         gap: 50px;
         padding-top: 70px;
     }
+    
+    /* Portfolio Accordion Styles */
+    .portfolio-accordion {
+        max-width: 1300px;
+        margin: 60px auto 80px;
+    }
+    
+    .accordion-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .accordion-item:hover {
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+    
+    .accordion-header {
+        width: 100%;
+        background: transparent;
+        border: none;
+        padding: 30px 0;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.3s ease;
+    }
+    
+    .header-content {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .project-number {
+        font-family: "EB Garamond", serif;
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.4);
+        font-weight: 300;
+        min-width: 40px;
+    }
+    
+    .project-title {
+        font-family: "EB Garamond", serif;
+        font-size: 32px;
+        font-weight: 400;
+        color: #fff;
+        margin: 0;
+        text-align: left;
+        transition: all 0.3s ease;
+        opacity: 0.8;
+    }
+    
+    .accordion-header:hover .project-title {
+        opacity: 1;
+        transform: translateX(5px);
+    }
+    
+    .accordion-arrow {
+        color: #fff;
+        transition: transform 0.3s ease;
+        opacity: 0.6;
+    }
+    
+    .accordion-item.active .accordion-arrow {
+        transform: rotate(180deg);
+        opacity: 1;
+    }
+    
+    .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+    }
+    
+    .accordion-item.active .accordion-content {
+        max-height: 800px;
+    }
+    
+    .content-inner {
+        display: flex;
+        gap: 50px;
+        padding: 20px 0 40px 70px;
+        align-items: flex-start;
+    }
+    
+    .project-info {
+        flex: 1.5;
+        max-width: 450px;
+    }
+    
+    .project-type {
+        color: #fff;
+        opacity: 0.5;
+        font-size: 14px;
+        font-weight: 400;
+        margin: 0 0 15px 0;
+        letter-spacing: 0.5px;
+    }
+    
+    .project-description {
+        color: #fff;
+        opacity: 0.8;
+        font-size: 17px;
+        line-height: 1.7;
+        font-weight: 300;
+        margin: 0;
+    }
+    
+    .project-image {
+        flex: 1;
+        max-width: 450px;
+    }
+    
+    .project-image img {
+        width: 100%;
+        border-radius: 8px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.5s ease forwards;
+    }
+    
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 </style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const accordionItems = document.querySelectorAll('.accordion-item');
+        
+        accordionItems.forEach((item) => {
+            const header = item.querySelector('.accordion-header');
+            
+            header?.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all accordion items
+                accordionItems.forEach((otherItem) => {
+                    otherItem.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    });
+</script>

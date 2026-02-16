@@ -52,6 +52,7 @@ const ListItem = ({ className, title, logo, children, ...props }, ref) => {
                         className,
                         "flex gap-2 items-center"
                     )}
+                    data-astro-reload
                     {...props}
                 >
                     <img

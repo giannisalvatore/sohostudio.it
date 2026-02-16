@@ -19,6 +19,8 @@ import Grad13 from "../assets/categoryLogos/Grad_13.png";
 import Grad10 from "../assets/categoryLogos/Grad_10.png";
 
 const { type } = Astro.props;
+// Generate a unique key based on the current URL to force React re-mount
+const currentPath = Astro.url.pathname;
 const sub = [
     {
         title: "Branding, Creatività & Design",
@@ -65,7 +67,7 @@ const sub = [
 ];
 ---
 
-<div class={`header ${type} mobile`} transition:persist="mobile-header">
+<div class={`header ${type} mobile`}>
     <div class="inner">
         <div class="menuContainer" id="menuToggle">
             <Image src={MenuIcon} alt="Menu di navigazione" class="hamburger" />
@@ -105,7 +107,7 @@ const sub = [
     </div>
 </div>
 
-<div class={`header ${type} desktop`} transition:persist="desktop-header">
+<div class={`header ${type} desktop`}>
     <div class="inner">
         <div class="menu">
             <div class="item" id="nav-menu-wrapper" data-nav-type={type}>
@@ -113,7 +115,7 @@ const sub = [
                     type={type}
                     item={"Servizi"}
                     sub={sub}
-                    client:load
+                    client:only="react"
                 />
             </div>
             <div class="item"><a href="/portfolio">Portfolio</a></div>
@@ -436,23 +438,5 @@ const sub = [
         // Reset body scroll state
         document.body.classList.remove('no-scroll');
         document.body.style.top = '';
-    });
-    
-    // Update header type after page transitions
-    document.addEventListener('astro:after-swap', () => {
-        const newBodyClass = document.body.className;
-        const headers = document.querySelectorAll('.header.desktop, .header.mobile');
-        
-        headers.forEach(header => {
-            // Remove both classes first
-            header.classList.remove('dark', 'light');
-            
-            // Add the correct class based on body
-            if (newBodyClass.includes('dark')) {
-                header.classList.add('dark');
-            } else if (newBodyClass.includes('light')) {
-                header.classList.add('light');
-            }
-        });
     });
 </script>

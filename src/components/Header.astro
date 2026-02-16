@@ -68,7 +68,7 @@ const sub = [
 <div class={`header ${type} mobile`}>
     <div class="inner">
         <div class="menuContainer" id="menuToggle">
-            <Image src={MenuIcon} alt="" class="hamburger" />
+            <Image src={MenuIcon} alt="Menu di navigazione" class="hamburger" />
             <span class="close-icon">×</span>
         </div>
         <div class="first logoContainer">
@@ -320,7 +320,7 @@ const sub = [
         const mobileMenu = document.getElementById('mobileMenu');
         const header = document.querySelector('.header.mobile');
         
-        if (menuToggle && mobileMenu) {
+        if (menuToggle && mobileMenu && header) {
             menuToggle.addEventListener('click', function() {
                 mobileMenu.classList.toggle('open');
                 header.classList.toggle('menu-open');

@@ -1,24 +1,24 @@
 {
     "default": {
-      "title": "sohostudio | Agenzia digitale creativa & Sviluppo software su misura | Roma",
+      "title": "sohostudio | Agenzia Digitale Creativa & Sviluppo Software su Misura | Roma",
       "description": "Soluzioni digitali basate sull'AI e sviluppo software su misura per aziende innovative. Dal branding allo sviluppo web, creiamo esperienze digitali che convertono. Con sede a Roma, consegniamo in tutto il mondo.",
       "openGraph": {
         "basic": {
           "title": "sohostudio | Agenzia per l'Innovazione Digitale",
           "type": "website",
-          "image": "https://sohostudio.com/images/og-home.jpg",
-          "url": "https://sohostudio.com/"
+          "image": "https://www.sohostudio.it/og-home.jpg",
+          "url": "https://www.sohostudio.it/"
         }
       },
       "twitter": {
         "card": "summary_large_image",
-        "site": "@sohostudio.it",
+        "site": "@sohostudio",
         "creator": "@sirgi__"
       },
       "extend": {
         "link": [
           { "rel": "icon", "href": "/favicon.ico" },
-          { "rel": "canonical", "href": "https://sohostudio.com/" }
+          { "rel": "canonical", "href": "https://www.sohostudio.it/" }
         ],
         "meta": [
           {
@@ -27,12 +27,331 @@
           },
           { "name": "geo.region", "content": "IT-62" },
           { "name": "geo.placename", "content": "Roma" },
-          { "name": "twitter:image", "content": "https://sohostudio.com/images/twitter-card-home.jpg" },
+          { "name": "twitter:image", "content": "https://www.sohostudio.it/og-home.jpg" },
           { "name": "twitter:title", "content": "sohostudio | Innovazione Digitale & Soluzioni AI su Misura" },
           { "name": "twitter:description", "content": "Agenzia digitale di Roma che trasforma le aziende attraverso software basati sull'AI e sviluppo web avanzato." },
-          { "name": "google-site-verification", "content": "XYZabc123" },
           { "httpEquiv": "x-ua-compatible", "content": "IE=edge" },
           { "name": "viewport", "content": "width=device-width, initial-scale=1, shrink-to-fit=no" }
+        ]
+      }
+    },
+    "/portfolio": {
+      "title": "Portfolio | I Nostri Progetti | sohostudio",
+      "description": "Scopri i progetti realizzati da sohostudio per brand internazionali: Shampora, Podernuovo by Giovanni Bulgari, Attivita24, Hyperlens e molti altri. Web design, branding e fotografia d'eccellenza.",
+      "openGraph": {
+        "basic": {
+          "title": "Portfolio sohostudio | Progetti di Web Design e Branding",
+          "type": "website",
+          "image": "https://www.sohostudio.it/og-portfolio.jpg",
+          "url": "https://www.sohostudio.it/portfolio"
+        }
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "site": "@sohostudio",
+        "creator": "@sirgi__"
+      },
+      "extend": {
+        "link": [
+          { "rel": "icon", "href": "/favicon.ico" },
+          { "rel": "canonical", "href": "https://www.sohostudio.it/portfolio" }
+        ],
+        "meta": [
+          {
+            "name": "keywords",
+            "content": "portfolio agenzia digitale, progetti web design, case study branding, progetti e-commerce, fotografia professionale"
+          },
+          { "name": "twitter:image", "content": "https://www.sohostudio.it/og-portfolio.jpg" },
+          { "name": "twitter:title", "content": "Portfolio sohostudio | Progetti di Eccellenza" },
+          { "name": "twitter:description", "content": "I nostri progetti per brand internazionali: design, sviluppo e fotografia." }
+        ]
+      }
+    },
+    "/mission": {
+      "title": "I Nostri Valori | Mission sohostudio",
+      "description": "Creatività senza stress, passione e innovazione: i valori che guidano sohostudio. Scopri come lavoriamo per creare progetti straordinari in un ambiente sereno e collaborativo.",
+      "openGraph": {
+        "basic": {
+          "title": "Mission e Valori | sohostudio",
+          "type": "website",
+          "image": "https://www.sohostudio.it/og-mission.jpg",
+          "url": "https://www.sohostudio.it/mission"
+        }
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "site": "@sohostudio",
+        "creator": "@sirgi__"
+      },
+      "extend": {
+        "link": [
+          { "rel": "icon", "href": "/favicon.ico" },
+          { "rel": "canonical", "href": "https://www.sohostudio.it/mission" }
+        ],
+        "meta": [
+          {
+            "name": "keywords",
+            "content": "valori aziendali, mission agenzia digitale, cultura aziendale, innovazione creativa"
+          },
+          { "name": "twitter:image", "content": "https://www.sohostudio.it/og-mission.jpg" },
+          { "name": "twitter:title", "content": "I Valori di sohostudio | Creatività e Passione" },
+          { "name": "twitter:description", "content": "Creatività senza stress, passione e innovazione guidano ogni nostro progetto." }
+        ]
+      }
+    },
+    "/team": {
+      "title": "Il Nostro Team | Chi Siamo | sohostudio",
+      "description": "Conosci il team di sohostudio: Gianni Salvatore (Founder & CEO) e Viola Carboni (Designer & Fotografa). Professionisti appassionati che trasformano idee in realtà digitali.",
+      "openGraph": {
+        "basic": {
+          "title": "Team sohostudio | I Professionisti Dietro i Progetti",
+          "type": "website",
+          "image": "https://www.sohostudio.it/og-team.jpg",
+          "url": "https://www.sohostudio.it/team"
+        }
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "site": "@sohostudio",
+        "creator": "@sirgi__"
+      },
+      "extend": {
+        "link": [
+          { "rel": "icon", "href": "/favicon.ico" },
+          { "rel": "canonical", "href": "https://www.sohostudio.it/team" }
+        ],
+        "meta": [
+          {
+            "name": "keywords",
+            "content": "team agenzia digitale, chi siamo, sviluppatori roma, designer roma, fotografi professionisti"
+          },
+          { "name": "twitter:image", "content": "https://www.sohostudio.it/og-team.jpg" },
+          { "name": "twitter:title", "content": "Team sohostudio | Esperti Digitali" },
+          { "name": "twitter:description", "content": "Un team di professionisti appassionati: sviluppo, design e fotografia d'eccellenza." }
+        ]
+      }
+    },
+    "/contatti": {
+      "title": "Contatti | Richiedi un Preventivo Gratuito | sohostudio",
+      "description": "Contatta sohostudio per il tuo progetto digitale. Compila il form o prenota una chiamata gratuita: ti contatteremo quando preferisci. Agenzia digitale a Roma.",
+      "openGraph": {
+        "basic": {
+          "title": "Contatta sohostudio | Preventivo Gratuito",
+          "type": "website",
+          "image": "https://www.sohostudio.it/og-contatti.jpg",
+          "url": "https://www.sohostudio.it/contatti"
+        }
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "site": "@sohostudio",
+        "creator": "@sirgi__"
+      },
+      "extend": {
+        "link": [
+          { "rel": "icon", "href": "/favicon.ico" },
+          { "rel": "canonical", "href": "https://www.sohostudio.it/contatti" }
+        ],
+        "meta": [
+          {
+            "name": "keywords",
+            "content": "contatti agenzia digitale, preventivo sito web, richiesta preventivo, agenzia roma contatti"
+          },
+          { "name": "twitter:image", "content": "https://www.sohostudio.it/og-contatti.jpg" },
+          { "name": "twitter:title", "content": "Contatti sohostudio | Preventivo Gratuito" },
+          { "name": "twitter:description", "content": "Compila il form o prenota una chiamata gratuita per il tuo progetto digitale." }
+        ]
+      }
+    },
+    "/servizi/software-su-misura": {
+      "title": "Software su Misura | Sviluppo Applicazioni Personalizzate | sohostudio Roma",
+      "description": "Sviluppiamo software personalizzati per gestire ordini, inventario, CRM e flussi interni. Riduci errori, risparmia tempo e fai crescere il tuo business con soluzioni su misura.",
+      "openGraph": {
+        "basic": {
+          "title": "Sviluppo Software su Misura | sohostudio",
+          "type": "website",
+          "image": "https://www.sohostudio.it/og-software.jpg",
+          "url": "https://www.sohostudio.it/servizi/software-su-misura"
+        }
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "site": "@sohostudio",
+        "creator": "@sirgi__"
+      },
+      "extend": {
+        "link": [
+          { "rel": "icon", "href": "/favicon.ico" },
+          { "rel": "canonical", "href": "https://www.sohostudio.it/servizi/software-su-misura" }
+        ],
+        "meta": [
+          {
+            "name": "keywords",
+            "content": "software personalizzato, sviluppo software su misura, CRM personalizzato, gestionale aziendale, software gestione ordini"
+          },
+          { "name": "twitter:image", "content": "https://www.sohostudio.it/og-software.jpg" },
+          { "name": "twitter:title", "content": "Software su Misura | Soluzioni Personalizzate per il Tuo Business" },
+          { "name": "twitter:description", "content": "Automatizza i processi, riduci gli errori e fai crescere il business con software fatto per te." }
+        ]
+      }
+    },
+    "/servizi/intelligenza-artificiale": {
+      "title": "Intelligenza Artificiale | Soluzioni AI per Aziende | sohostudio",
+      "description": "Integriamo l'intelligenza artificiale nei tuoi processi aziendali per ottimizzare operazioni, automatizzare task e prendere decisioni data-driven. Consulenza AI personalizzata.",
+      "openGraph": {
+        "basic": {
+          "title": "Intelligenza Artificiale | Soluzioni AI | sohostudio",
+          "type": "website",
+          "image": "https://www.sohostudio.it/og-ai.jpg",
+          "url": "https://www.sohostudio.it/servizi/intelligenza-artificiale"
+        }
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "site": "@sohostudio",
+        "creator": "@sirgi__"
+      },
+      "extend": {
+        "link": [
+          { "rel": "icon", "href": "/favicon.ico" },
+          { "rel": "canonical", "href": "https://www.sohostudio.it/servizi/intelligenza-artificiale" }
+        ],
+        "meta": [
+          {
+            "name": "keywords",
+            "content": "intelligenza artificiale, AI aziendale, machine learning, automazione AI, chatbot AI, consulenza intelligenza artificiale"
+          },
+          { "name": "twitter:image", "content": "https://www.sohostudio.it/og-ai.jpg" },
+          { "name": "twitter:title", "content": "Soluzioni AI per Aziende | Intelligenza Artificiale" },
+          { "name": "twitter:description", "content": "Integra l'AI nei tuoi processi per ottimizzare operazioni e automatizzare task complessi." }
+        ]
+      }
+    },
+    "/servizi/siti-web-e-commerce": {
+      "title": "Siti Web & E-commerce | Sviluppo Negozi Online Performanti | sohostudio",
+      "description": "Sviluppo siti web ed e-commerce su misura con +67% di tempo di permanenza e +45% di conversioni. Design guidato dai dati, performance ottimizzate e SEO integrata.",
+      "openGraph": {
+        "basic": {
+          "title": "Sviluppo Siti Web & E-commerce | sohostudio",
+          "type": "website",
+          "image": "https://www.sohostudio.it/og-ecommerce.jpg",
+          "url": "https://www.sohostudio.it/servizi/siti-web-e-commerce"
+        }
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "site": "@sohostudio",
+        "creator": "@sirgi__"
+      },
+      "extend": {
+        "link": [
+          { "rel": "icon", "href": "/favicon.ico" },
+          { "rel": "canonical", "href": "https://www.sohostudio.it/servizi/siti-web-e-commerce" }
+        ],
+        "meta": [
+          {
+            "name": "keywords",
+            "content": "sviluppo siti web, e-commerce personalizzato, negozio online, shopify, woocommerce, siti web performanti, web design roma"
+          },
+          { "name": "twitter:image", "content": "https://www.sohostudio.it/og-ecommerce.jpg" },
+          { "name": "twitter:title", "content": "Siti Web & E-commerce che Convertono | sohostudio" },
+          { "name": "twitter:description", "content": "Trasforma visitatori in clienti fedeli con siti performanti e design guidato dai dati." }
+        ]
+      }
+    },
+    "/servizi/applicazioni-mobile": {
+      "title": "Sviluppo App Mobile | iOS & Android | sohostudio Roma",
+      "description": "Sviluppiamo app native e ibride per iOS e Android con +50% di engagement utenti. Design intuitivo, performance eccezionali e funzionalità su misura per il tuo business.",
+      "openGraph": {
+        "basic": {
+          "title": "Sviluppo Applicazioni Mobile | iOS & Android | sohostudio",
+          "type": "website",
+          "image": "https://www.sohostudio.it/og-mobile.jpg",
+          "url": "https://www.sohostudio.it/servizi/applicazioni-mobile"
+        }
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "site": "@sohostudio",
+        "creator": "@sirgi__"
+      },
+      "extend": {
+        "link": [
+          { "rel": "icon", "href": "/favicon.ico" },
+          { "rel": "canonical", "href": "https://www.sohostudio.it/servizi/applicazioni-mobile" }
+        ],
+        "meta": [
+          {
+            "name": "keywords",
+            "content": "sviluppo app mobile, app ios, app android, applicazioni native, react native, app ibride, sviluppo mobile roma"
+          },
+          { "name": "twitter:image", "content": "https://www.sohostudio.it/og-mobile.jpg" },
+          { "name": "twitter:title", "content": "Sviluppo App Mobile iOS & Android | sohostudio" },
+          { "name": "twitter:description", "content": "App mobile che conquistano gli utenti con design intuitivo e performance eccezionali." }
+        ]
+      }
+    },
+    "/servizi/marketing": {
+      "title": "Marketing Digitale | SEO, SEM & Social Media | sohostudio Roma",
+      "description": "Strategie di marketing digitale per +30% lead qualificati e +20% conversioni. SEO, Google Ads, social media marketing e campagne mirate per far crescere il tuo business online.",
+      "openGraph": {
+        "basic": {
+          "title": "Marketing Digitale | Strategie che Convertono | sohostudio",
+          "type": "website",
+          "image": "https://www.sohostudio.it/og-marketing.jpg",
+          "url": "https://www.sohostudio.it/servizi/marketing"
+        }
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "site": "@sohostudio",
+        "creator": "@sirgi__"
+      },
+      "extend": {
+        "link": [
+          { "rel": "icon", "href": "/favicon.ico" },
+          { "rel": "canonical", "href": "https://www.sohostudio.it/servizi/marketing" }
+        ],
+        "meta": [
+          {
+            "name": "keywords",
+            "content": "marketing digitale, SEO roma, google ads, social media marketing, lead generation, campagne pubblicitarie online"
+          },
+          { "name": "twitter:image", "content": "https://www.sohostudio.it/og-marketing.jpg" },
+          { "name": "twitter:title", "content": "Marketing Digitale | Più Lead, Più Conversioni" },
+          { "name": "twitter:description", "content": "Strategie di marketing su misura per aumentare visibilità, lead qualificati e conversioni." }
+        ]
+      }
+    },
+    "/servizi/creativita-branding-design": {
+      "title": "Branding, Creatività & Design | Identità Visiva | sohostudio Roma",
+      "description": "Creiamo brand identity memorabili: logo design, art direction, fotografia professionale e comunicazione visiva. Dal concept alla realizzazione, curiamo il tuo brand dalla A alla Z.",
+      "openGraph": {
+        "basic": {
+          "title": "Branding & Design | Identità Visiva che Emoziona | sohostudio",
+          "type": "website",
+          "image": "https://www.sohostudio.it/og-branding.jpg",
+          "url": "https://www.sohostudio.it/servizi/creativita-branding-design"
+        }
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "site": "@sohostudio",
+        "creator": "@sirgi__"
+      },
+      "extend": {
+        "link": [
+          { "rel": "icon", "href": "/favicon.ico" },
+          { "rel": "canonical", "href": "https://www.sohostudio.it/servizi/creativita-branding-design" }
+        ],
+        "meta": [
+          {
+            "name": "keywords",
+            "content": "branding, logo design, identità visiva, art direction, fotografia professionale, brand identity, graphic design roma"
+          },
+          { "name": "twitter:image", "content": "https://www.sohostudio.it/og-branding.jpg" },
+          { "name": "twitter:title", "content": "Branding & Design | Identità che Si Distinguono" },
+          { "name": "twitter:description", "content": "Creiamo brand memorabili: logo, art direction e fotografia professionale per far emergere il tuo business." }
         ]
       }
     }

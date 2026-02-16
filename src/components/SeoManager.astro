@@ -3,7 +3,7 @@ import { SEO } from "astro-seo";
 import seoData from "../data/seo.json";
 
 const { pathname } = Astro.url;
-const seo = seoData[pathname] || seoData.default;
+const seo = (seoData as Record<string, any>)[pathname] || seoData.default;
 ---
 
 <SEO

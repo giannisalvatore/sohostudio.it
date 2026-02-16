@@ -78,7 +78,7 @@ const portfolio = [
     },
 ];
 
-const chunkArray = (arr, size) => {
+const chunkArray = (arr: any[], size: number) => {
     return Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
         arr.slice(i * size, i * size + size)
     );
@@ -103,12 +103,12 @@ const chunkedPortfolioMobile = chunkArray(portfolio, 1);
             <Logos />
             <div class="portfolio desktop">
                 {
-                    chunkedPortfolio.map((group) => (
+                    chunkedPortfolio.map((group: any) => (
                         <div class="row">
-                            {group.map((p, index) => (
-                                <div class="item" key={index}>
+                            {group.map((p: any, index: number) => (
+                                <div class="item">
                                     <p class="title">{p.title}</p>
-                                    <Image src={p.photo} alt={p.alt} />
+                                    <Image src={p.photo} alt={p.alt || p.title} loading="lazy" />
                                     <p class="description">{p.description}</p>
                                 </div>
                             ))}
@@ -118,12 +118,12 @@ const chunkedPortfolioMobile = chunkArray(portfolio, 1);
             </div>
             <div class="portfolio mobile">
                 {
-                    chunkedPortfolioMobile.map((group) => (
+                    chunkedPortfolioMobile.map((group: any) => (
                         <div class="row">
-                            {group.map((p, index) => (
-                                <div class="item" key={index}>
+                            {group.map((p: any, index: number) => (
+                                <div class="item">
                                     <p class="title">{p.title}</p>
-                                    <Image src={p.photo} alt={p.alt} />
+                                    <Image src={p.photo} alt={p.alt || p.title} loading="lazy" />
                                     <p class="description">{p.description}</p>
                                 </div>
                             ))}

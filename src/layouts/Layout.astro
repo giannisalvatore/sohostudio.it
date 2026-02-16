@@ -4,25 +4,32 @@ import "@/styles/globals.css";
 import { ClientRouter } from "astro:transitions";
 
 import SeoManager from "@/components/SeoManager.astro";
+import Schema from "@/components/Schema.astro";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="it">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="sitemap" href="/sitemap-index.xml" />
         <meta name="generator" content={Astro.generator} />
+        
+        <!-- Preload critical fonts -->
+        <link rel="preload" href="/src/assets/fonts/Satoshi/Satoshi-Medium.woff2" as="font" type="font/woff2" crossorigin />
+        
+        <!-- Google Fonts ottimizzato con display=swap -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
-            rel="stylesheet"
-        />
-        <script src="https://unpkg.com/akar-icons-fonts"></script>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+        <noscript>
+            <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet" />
+        </noscript>
+        
         <ClientRouter />
         <SeoManager />
+        <Schema />
     </head>
     <body class={type}>
         <div class="layout">

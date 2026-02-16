@@ -1,0 +1,89 @@
+---
+// Schema.org Structured Data per SEO
+---
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Sohostudio",
+  "legalName": "Sohostudio srl",
+  "url": "https://www.sohostudio.it",
+  "logo": "https://www.sohostudio.it/logo.png",
+  "foundingDate": "2020",
+  "founders": [
+    {
+      "@type": "Person",
+      "name": "Gianni Salvatore"
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Roma",
+    "addressRegion": "RM",
+    "addressCountry": "IT"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Service",
+    "email": "hello@sohostudio.it",
+    "availableLanguage": ["Italian", "English"]
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/sohostudio",
+    "https://www.instagram.com/sohostudio.it"
+  ],
+  "description": "Agenzia digitale creativa specializzata in sviluppo software su misura, intelligenza artificiale, web design, branding e marketing digitale.",
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "41.9028",
+      "longitude": "12.4964"
+    },
+    "geoRadius": "10000000"
+  },
+  "serviceType": [
+    "Software Development",
+    "Web Design",
+    "E-commerce Development",
+    "Mobile App Development",
+    "Digital Marketing",
+    "Branding",
+    "Artificial Intelligence Solutions"
+  ]
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Sohostudio",
+  "image": "https://www.sohostudio.it/logo.png",
+  "@id": "https://www.sohostudio.it",
+  "url": "https://www.sohostudio.it",
+  "telephone": "",
+  "priceRange": "€€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "",
+    "addressLocality": "Roma",
+    "postalCode": "",
+    "addressCountry": "IT"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 41.9028,
+    "longitude": 12.4964
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "09:00",
+    "closes": "18:00"
+  }
+})} />

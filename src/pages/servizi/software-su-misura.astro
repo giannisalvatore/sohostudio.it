@@ -1,6 +1,7 @@
 ---
 import Page from "../../layouts/Page.astro";
 import Layout from "../../layouts/Layout.astro";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema.astro";
 
 import Button from "@/components/Button.astro";
 
@@ -14,11 +15,16 @@ import Grad from "../../assets/pages/software-su-misura/grad.png";
 import Arrow from "../../assets/icons/arrow.svg";
 ---
 
+<BreadcrumbSchema items={[
+    { name: "Home", url: "https://www.sohostudio.it/" },
+    { name: "Servizi", url: "https://www.sohostudio.it/servizi/software-su-misura" },
+    { name: "Software su Misura", url: "https://www.sohostudio.it/servizi/software-su-misura" }
+]} />
+
 <Layout type="dark">
     <Image
         src={HeroImg}
-        alt="A sphere of sohostudio."
-        alt="Grad"
+        alt="Sviluppo software su misura - Sohostudio"
         class="grad"
     />
     <Page

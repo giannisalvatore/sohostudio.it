@@ -88,10 +88,25 @@ const chunkedPortfolioMobile = chunkArray(portfolio, 1);
             <div class="hero">
                 <h1>
                     I brand non sono più solo prodotti: sono esperienze,
-                    connessioni, emozioni. Creiamo soluzioni che trasformano le
+                    connessioni, emozioni. <br /><br />
+                    Creiamo soluzioni che trasformano le
                     idee in realtà, unendo innovazione e visione per far
                     crescere il tuo business come mai prima d'ora.
                 </h1>
+                <div class="intro-content">
+                    <p>
+                        Siamo un'<strong>agenzia digitale</strong> con sede a <strong>Roma</strong> specializzata nello sviluppo di progetti digitali innovativi. 
+                        Dalla consulenza strategica alla realizzazione tecnica, supportiamo aziende e startup nel creare esperienze digitali che generano risultati concreti.
+                    </p>
+                    <p>
+                        Dal <strong>design di siti web</strong> allo <strong>sviluppo di applicazioni mobile</strong>, dalla <strong>creazione 
+                        di identità visive memorabili</strong> alle <strong>strategie di marketing digitale data-driven</strong>, ogni servizio è progettato 
+                        per portare il tuo brand al livello successivo. 
+                    </p>
+                    <p>
+                        Uniamo creatività e tecnologia per trasformare la tua visione in realtà digitale.
+                    </p>
+                </div>
             </div>
             <Logos />
             <div class="portfolio desktop">
@@ -136,9 +151,16 @@ const chunkedPortfolioMobile = chunkArray(portfolio, 1);
             padding-right: 20px;
         }
         .hero h1 {
-            font-size: 28px;
-            line-height: 32px;
+            font-size: 32px;
+            line-height: 38px;
             padding-top: 50px;
+        }
+        .intro-content {
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+        .intro-content p {
+            display: none;
         }
         .bigTitle {
             font-size: 24px;
@@ -163,6 +185,9 @@ const chunkedPortfolioMobile = chunkArray(portfolio, 1);
         .desktop {
             display: none;
         }
+        .hero{
+            padding: 0;
+        }
     }
 </style>
 
@@ -173,6 +198,7 @@ const chunkedPortfolioMobile = chunkArray(portfolio, 1);
     .desktop {
         display: block;
     }
+
     .container {
         max-width: 1300px;
         padding-left: 50px;
@@ -217,8 +243,22 @@ const chunkedPortfolioMobile = chunkArray(portfolio, 1);
         font-size: 60px;
         max-width: 900px;
         line-height: 59px;
-        padding-top: 90px;
         margin-bottom: 20px;
+    }
+    .intro-content {
+        max-width: 900px;
+    }
+    .intro-content p {
+        color: #fff;
+        opacity: 0.8;
+        font-size: 17px;
+        line-height: 28px;
+        margin-bottom: 20px;
+        font-weight: 300;
+    }
+    .intro-content strong {
+        opacity: 1;
+        font-weight: 500;
     }
     h1 * {
         display: inline-block;
@@ -275,5 +315,10 @@ const chunkedPortfolioMobile = chunkArray(portfolio, 1);
     .portoflio hr {
         margin-bottom: 20px;
         border-color: red;
+    }
+    .hero{
+        display: flex;
+        gap: 50px;
+        padding-top: 70px;
     }
 </style>

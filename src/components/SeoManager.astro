@@ -6,11 +6,15 @@ const { pathname } = Astro.url;
 // Normalizza il pathname rimuovendo trailing slash (eccetto per la home)
 const normalizedPath = pathname === '/' ? '/' : pathname.replace(/\/$/, '');
 const seo = (seoData as Record<string, any>)[normalizedPath] || seoData.default;
+
+// Genera il canonical URL completo
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <SEO
     title={seo.title}
     description={seo.description}
+    canonical={canonicalURL}
     openGraph={seo.openGraph}
     twitter={seo.twitter}
     extend={seo.extend}

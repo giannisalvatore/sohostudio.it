@@ -9,7 +9,6 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
 } from "./ui/navigation-menu";
-import { Image } from "astro:assets";
 
 export default function NavigationMenu_({ item, sub, type }) {
     return (

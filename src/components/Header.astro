@@ -158,36 +158,44 @@ const sub = [
     }
     .mobile-menu {
         position: fixed;
-        top: 80px;
+        top: 0;
         left: 0;
         width: 100%;
-        height: calc(100vh - 80px);
+        height: 100vh;
         background: hsl(var(--background));
         display: none;
         z-index: 1000;
-        justify-content: center;
-        align-items: center;
-        padding-top: 0;
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
     .mobile-menu.open {
         display: flex;
+        opacity: 1;
+        justify-content: center;
+        align-items: center;
     }
     .mobile-menu-inner {
         text-align: center;
-        position: relative;
-        margin-top: 5vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        padding: 20px;
     }
     .mobile-menu-inner a {
         display: block;
         font-family: "EB Garamond", serif;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         color: hsl(var(--foreground));
         text-decoration: none;
-        margin: 15px 0;
-        transition: color 0.3s ease;
+        transition: all 0.3s ease;
+        opacity: 0.8;
     }
     .mobile-menu-inner a:hover {
-        color: #666;
+        opacity: 1;
+        transform: scale(1.05);
     }
     .inner {
         max-width: 1300px;
@@ -315,26 +323,62 @@ const sub = [
 </style>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    function initMobileMenu() {
         const menuToggle = document.getElementById('menuToggle');
         const mobileMenu = document.getElementById('mobileMenu');
         const header = document.querySelector('.header.mobile');
         
-        if (menuToggle && mobileMenu && header) {
-            menuToggle.addEventListener('click', function() {
-                mobileMenu.classList.toggle('open');
-                header.classList.toggle('menu-open');
-                document.body.classList.toggle('no-scroll');
-            });
-            
-            // Close menu when clicking outside
-            mobileMenu.addEventListener('click', function(event) {
-                if (event.target === mobileMenu) {
-                    mobileMenu.classList.remove('open');
-                    header.classList.remove('menu-open');
-                    document.body.classList.remove('no-scroll');
-                }
-            });
+        if (!menuToggle || !mobileMenu || !header) {
+            console.warn('Menu elements not found');
+            return;
         }
-    });
+        
+        // Remove existing listeners before adding new ones
+        const newMenuToggle = menuToggle.cloneNode(true);
+        if (menuToggle.parentNode) {
+            menuToggle.parentNode.replaceChild(newMenuToggle, menuToggle);
+        }
+        
+        newMenuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const isOpen = mobileMenu.classList.contains('open');
+            
+            if (isOpen) {
+                mobileMenu.classList.remove('open');
+                header.classList.remove('menu-open');
+                document.body.classList.remove('no-scroll');
+            } else {
+                mobileMenu.classList.add('open');
+                header.classList.add('menu-open');
+                document.body.classList.add('no-scroll');
+            }
+        });
+        
+        // Close menu when clicking on a link
+        const menuLinks = mobileMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('open');
+                header.classList.remove('menu-open');
+                document.body.classList.remove('no-scroll');
+            });
+        });
+        
+        // Close menu when clicking outside
+        mobileMenu.addEventListener('click', function(event) {
+            if (event.target === mobileMenu) {
+                mobileMenu.classList.remove('open');
+                header.classList.remove('menu-open');
+                document.body.classList.remove('no-scroll');
+            }
+        });
+    }
+    
+    // Initialize on load
+    document.addEventListener('DOMContentLoaded', initMobileMenu);
+    
+    // Re-initialize after Astro page transitions
+    document.addEventListener('astro:page-load', initMobileMenu);
 </script>

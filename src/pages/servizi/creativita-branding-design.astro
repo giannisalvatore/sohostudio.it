@@ -26,98 +26,138 @@ import UX from "../../assets/pages/branding/ux.jpg";
         btnText="Parla con un designer"
         topTitle="Branding, Creatività & Design"
         title="Curiamo il tuo brand dalla A alla Z"
-        ,
         subTitle="Siamo esperti nel creare brand che si distinguono. Dal logo alla tua comunicazione visiva, realizziamo soluzioni su misura per farti emergere."
     >
-        <div class="banner">
+        <div class="intro-banner">
             <h2>Eleviamo il tuo brand</h2>
             <p>Un brand di successo è un brand che viene ricordato</p>
         </div>
-        <div class="services">
-            <div class="col">
-                <div class="service">
-                    <Image
-                        src={BrandIdentity}
-                        alt="Brand identity by soho studio"
-                    />
+        
+        <div class="services-container">
+            <div class="service-item">
+                <div class="service-number">01</div>
+                <div class="service-content">
                     <h2>Brand Identity</h2>
-                    <p>
-                        Il tuo logo, i tuoi colori, il tuo stile: lavoriamo su
-                        ogni dettaglio per farti riconoscere al primo sguardo.
-                        Perché quando i clienti si fidano del tuo aspetto,
-                        scelgono te invece dei competitor.
-                    </p>
+                    <div class="service-grid">
+                        <p>
+                            Il tuo logo, i tuoi colori, il tuo stile: lavoriamo su
+                            ogni dettaglio per farti riconoscere al primo sguardo.
+                            Perché quando i clienti si fidano del tuo aspetto,
+                            scelgono te invece dei competitor.
+                        </p>
+                        <div class="service-image">
+                            <Image
+                                src={BrandIdentity}
+                                alt="Brand identity by soho studio"
+                            />
+                        </div>
+                    </div>
                 </div>
-                <div class="service">
-                    <Image
-                        src={Comunicazione}
-                        alt="Comunicazione by soho studio"
-                    />
-                    <h2>Social management</h2>
-                    <p>
-                        I social sono il tuo palcoscenico, non un megafono.
-                        Creiamo contenuti che fanno vibrare il pubblico,
-                        strategie che trasformano like in lead e storie che
-                        costruiscono fedeltà, non solo follower.
-                    </p>
+            </div>
+
+            <div class="service-item">
+                <div class="service-number">02</div>
+                <div class="service-content">
+                    <h2>Social Management</h2>
+                    <div class="service-grid">
+                        <p>
+                            I social sono il tuo palcoscenico, non un megafono.
+                            Creiamo contenuti che fanno vibrare il pubblico,
+                            strategie che trasformano like in lead e storie che
+                            costruiscono fedeltà, non solo follower.
+                        </p>
+                        <div class="service-image">
+                            <Image
+                                src={Comunicazione}
+                                alt="Comunicazione by soho studio"
+                            />
+                        </div>
+                    </div>
                 </div>
-                <div class="service">
-                    <Image src={UX} alt="UI/UX design by soho studio" />
+            </div>
+
+            <div class="service-item">
+                <div class="service-number">03</div>
+                <div class="service-content">
                     <h2>UI/UX Design</h2>
-                    <p>
-                        Design che seduce e funziona: interfacce intuitive,
-                        percorsi senza attriti e micro-interazioni che
-                        trasformano un utente casuale in un cliente entusiasta.
-                        Perché l’usabilità è la nuova eleganza.
-                    </p>
+                    <div class="service-grid">
+                        <p>
+                            Design che seduce e funziona: interfacce intuitive,
+                            percorsi senza attriti e micro-interazioni che
+                            trasformano un utente casuale in un cliente entusiasta.
+                            Perché l'usabilità è la nuova eleganza.
+                        </p>
+                        <div class="service-image">
+                            <Image src={UX} alt="UI/UX design by soho studio" />
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col2">
-                <div class="service">
-                    <Image
-                        src={ArtDirection}
-                        alt="Art direction by soho studio"
-                    />
+
+            <div class="service-item">
+                <div class="service-number">04</div>
+                <div class="service-content">
                     <h2>Art Direction</h2>
-                    <p>
-                        Dalle foto ai video, dai social al packaging: curiamo
-                        ogni visual per trasmettere professionalità e far
-                        ricordare il tuo brand. Perché l’occhio vuole la sua
-                        parte, ma soprattutto vuole coerenza.
-                    </p>
+                    <div class="service-grid">
+                        <p>
+                            Dalle foto ai video, dai social al packaging: curiamo
+                            ogni visual per trasmettere professionalità e far
+                            ricordare il tuo brand. Perché l'occhio vuole la sua
+                            parte, ma soprattutto vuole coerenza.
+                        </p>
+                        <div class="service-image">
+                            <Image
+                                src={ArtDirection}
+                                alt="Art direction by soho studio"
+                            />
+                        </div>
+                    </div>
                 </div>
-                <div class="service">
-                    <Image
-                        src={Shooting}
-                        alt="Shooting service by soho studio"
-                    />
+            </div>
+
+            <div class="service-item">
+                <div class="service-number">05</div>
+                <div class="service-content">
                     <h2>Shooting</h2>
-                    <p>
-                        Foto che non mostrano soltanto il prodotto, ma
-                        raccontano perché dovrebbero comprarlo. Luce, angoli e
-                        styling studiati per far dire al cliente: ‘Questo fa per
-                        me’.
-                    </p>
+                    <div class="service-grid">
+                        <p>
+                            Foto che non mostrano soltanto il prodotto, ma
+                            raccontano perché dovrebbero comprarlo. Luce, angoli e
+                            styling studiati per far dire al cliente: 'Questo fa per
+                            me'.
+                        </p>
+                        <div class="service-image">
+                            <Image
+                                src={Shooting}
+                                alt="Shooting service by soho studio"
+                            />
+                        </div>
+                    </div>
                 </div>
-                <div class="service">
-                    <Image
-                        src={Storytelling}
-                        alt="Storytelling by soho studio"
-                    />
+            </div>
+
+            <div class="service-item">
+                <div class="service-number">06</div>
+                <div class="service-content">
                     <h2>Visual Storytelling</h2>
-                    <p>
-                        Lo sappiamo: il tuo brand ha una storia speciale. Noi la
-                        traduciamo in foto, grafiche e video che la fanno
-                        emergere senza urlare. Perché il miglior marketing è
-                        quello che sembra non esserci.
-                    </p>
+                    <div class="service-grid">
+                        <p>
+                            Lo sappiamo: il tuo brand ha una storia speciale. Noi la
+                            traduciamo in foto, grafiche e video che la fanno
+                            emergere senza urlare. Perché il miglior marketing è
+                            quello che sembra non esserci.
+                        </p>
+                        <div class="service-image">
+                            <Image
+                                src={Storytelling}
+                                alt="Storytelling by soho studio"
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="banner">
-            <h2 class="bigTitle">Raccontaci la tua idea pazzesca</h2>
-            <Button size="xl">Richiedi un preventivo gratuito</Button>
-        </div>
+
     </Page>
 </Layout>
 
@@ -130,74 +170,201 @@ import UX from "../../assets/pages/branding/ux.jpg";
         z-index: -1;
         opacity: 1;
     }
-    .services {
-        display: flex;
-        gap: 45px;
-
-        max-width: 800px;
-        margin: 0 auto;
-    }
-    .banner {
-        margin-top: 80px;
-        margin-bottom: 120px;
+    
+    .intro-banner {
+        margin: 80px auto 100px;
         text-align: center;
-    }
-    .banner h2 {
-        margin-bottom: 20px;
-        font-size: 75px;
-        line-height: 75px;
         max-width: 900px;
-        color: #111;
+    }
+    
+    .intro-banner h2 {
         font-family: "EB Garamond", serif;
-        margin: 0 auto;
-        text-align: center;
-        margin-top: 30px;
-        opacity: 0.8;
-    }
-    .banner p {
-        font-size: 20px;
-        text-align: center;
-        margin: 0 auto;
+        font-size: 4.5rem;
+        line-height: 1.1;
         color: #111;
-        opacity: 0.6;
-        max-width: 600px;
-        font-weight: 400;
-        margin-top: 30px;
+        margin: 0 0 20px 0;
+        font-weight: 500;
+        letter-spacing: -1px;
+    }
+    
+    .intro-banner p {
+        font-size: 1.2rem;
+        color: #666;
+        margin: 0;
+        font-weight: 300;
+    }
+    
+    .services-container {
+        max-width: 1100px;
+        margin: 0 auto 120px;
+    }
+    
+    .service-item {
+        display: flex;
+        gap: 40px;
         margin-bottom: 100px;
+        padding-bottom: 80px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
     }
-    .services h2 {
-        font-family: "EB Garamond";
-        margin-top: 25px;
-        font-size: 35px;
-        margin-bottom: 15px;
+    
+    .service-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
     }
-    .services p {
-        opacity: 0.7;
-        font-size: 16px;
+    
+    .service-item:hover {
+        transform: translateX(5px);
     }
-    .col2 {
-        padding-top: 100px;
+    
+    .service-number {
+        font-family: "EB Garamond", serif;
+        font-size: 5rem;
+        font-weight: 300;
+        color: rgba(0, 0, 0, 0.05);
+        line-height: 1;
+        user-select: none;
+        min-width: 100px;
+        padding-top: 5px;
     }
-    .service {
-        margin-bottom: 60px;
-    }
-    .col,
-    .col2 {
+    
+    .service-content {
         flex: 1;
     }
-    .banner h2.bigTitle {
-        margin-bottom: 40px;
+    
+    .service-content h2 {
+        font-family: "EB Garamond", serif;
+        font-size: 2.8rem;
+        font-weight: 500;
+        margin: 0 0 30px 0;
+        color: #111;
+        letter-spacing: -0.5px;
+        line-height: 1.2;
     }
+    
+    .service-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: start;
+    }
+    
+    .service-grid p {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: #444;
+        margin: 0;
+        font-weight: 300;
+    }
+    
+    .service-image {
+        width: 100%;
+    }
+    
+    .service-image img {
+        width: 100%;
+        border-radius: 8px;
+        transition: transform 0.4s ease;
+    }
+    
+    .service-item:hover .service-image img {
+        transform: scale(1.02);
+    }
+    
+    .cta-banner {
+        margin: 120px auto;
+        text-align: center;
+        max-width: 900px;
+    }
+    
+    .cta-banner h2 {
+        font-family: "EB Garamond", serif;
+        font-size: 4.5rem;
+        line-height: 1.1;
+        color: #111;
+        margin: 0 0 40px 0;
+        font-weight: 500;
+        letter-spacing: -1px;
+    }
+    
+    /* Responsive */
+    @media screen and (max-width: 968px) {
+        .service-grid {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .service-grid p {
+            order: 2;
+        }
+        
+        .service-image {
+            order: 1;
+        }
+    }
+    
     @media screen and (max-width: 768px) {
-        .banner h2 {
-            font-size: 32px;
-            line-height: 36px;
+        .intro-banner {
+            margin: 60px auto 80px;
         }
-        .banner p {
-            font-size: 16px;
+        
+        .intro-banner h2 {
+            font-size: 2.5rem;
         }
-        .services h2 {
-            font-size: 24px;
+        
+        .intro-banner p {
+            font-size: 1rem;
+        }
+        
+        .service-item {
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 80px;
+            padding-bottom: 60px;
+        }
+        
+        .service-item:hover {
+            transform: none;
+        }
+        
+        .service-number {
+            font-size: 3rem;
+            min-width: auto;
+        }
+        
+        .service-content h2 {
+            font-size: 2rem;
+        }
+        
+        .service-grid p {
+            font-size: 1rem;
+        }
+        
+        .cta-banner {
+            margin: 80px auto;
+        }
+        
+        .cta-banner h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+    }
+    
+    @media screen and (max-width: 480px) {
+        .intro-banner h2 {
+            font-size: 2rem;
+        }
+        
+        .service-number {
+            font-size: 2.5rem;
+        }
+        
+        .service-content h2 {
+            font-size: 1.6rem;
+        }
+        
+        .cta-banner h2 {
+            font-size: 1.8rem;
         }
     }
 </style>

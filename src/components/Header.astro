@@ -161,7 +161,7 @@ const sub = [
         top: 0;
         left: 0;
         width: 100%;
-        height: 100vh;
+        height: 100dvh;
         background: hsl(var(--background));
         display: none;
         z-index: 1000;
@@ -323,6 +323,9 @@ const sub = [
     }
     body.no-scroll {
         overflow: hidden;
+        position: fixed;
+        width: 100%;
+        height: 100%;
     }
 </style>
 
@@ -337,6 +340,8 @@ const sub = [
             return;
         }
         
+        let scrollPosition = 0;
+        
         // Remove existing listeners before adding new ones
         const newMenuToggle = menuToggle.cloneNode(true);
         if (menuToggle.parentNode) {
@@ -350,12 +355,18 @@ const sub = [
             const isOpen = mobileMenu.classList.contains('open');
             
             if (isOpen) {
+                // Chiudi menu
                 mobileMenu.classList.remove('open');
                 header.classList.remove('menu-open');
                 document.body.classList.remove('no-scroll');
+                document.body.style.top = '';
+                window.scrollTo(0, scrollPosition);
             } else {
+                // Apri menu
+                scrollPosition = window.pageYOffset;
                 mobileMenu.classList.add('open');
                 header.classList.add('menu-open');
+                document.body.style.top = `-${scrollPosition}px`;
                 document.body.classList.add('no-scroll');
             }
         });
@@ -367,6 +378,8 @@ const sub = [
                 mobileMenu.classList.remove('open');
                 header.classList.remove('menu-open');
                 document.body.classList.remove('no-scroll');
+                document.body.style.top = '';
+                window.scrollTo(0, scrollPosition);
             });
         });
         
@@ -376,6 +389,8 @@ const sub = [
                 mobileMenu.classList.remove('open');
                 header.classList.remove('menu-open');
                 document.body.classList.remove('no-scroll');
+                document.body.style.top = '';
+                window.scrollTo(0, scrollPosition);
             }
         });
     }

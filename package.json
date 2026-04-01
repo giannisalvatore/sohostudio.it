@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.2.3",
-    "astro-icon": "^1.1.5"
+    "astro-icon": "^1.1.5",
+    "puppeteer": "^24.40.0"
   }
 }

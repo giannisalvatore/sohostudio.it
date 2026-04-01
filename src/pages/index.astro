@@ -15,6 +15,8 @@ import Wave from "../assets/portfolio/wave.jpg";
 import Hyperlens from "../assets/portfolio/hyperlens.jpg";
 import Attivita24 from "../assets/portfolio/attivita24.jpg";
 import Giuliana from "../assets/portfolio/giuliana.jpg";
+import Jetugc from "../assets/portfolio/jetugc.jpg";
+import Fiscojet from "../assets/portfolio/fiscojet.jpg";
 
 const portfolio = [
     {
@@ -23,6 +25,23 @@ const portfolio = [
         details: "Piattaforma per annunci che connette compratori e venditori in tempo reale. Marketplace intuitivo che semplifica la compravendita con sistema di matching intelligente.",
         photo: Attivita24,
         alt: "Attivita24 project",
+        link: "https://www.attivita24.com",
+    },
+    {
+        title: "JetUGC",
+        description: "AI Platform · Marketing",
+        details: "Piattaforma AI che genera video UGC autentici per campagne pubblicitarie. Inserisci il link del prodotto e ottieni video pronti per Meta, TikTok e Reels in meno di 5 minuti — zero agenzie, zero attese.",
+        photo: Jetugc,
+        alt: "JetUGC project",
+        link: "https://www.jetugc.com",
+    },
+    {
+        title: "FiscoJet",
+        description: "SaaS · Fintech",
+        details: "Soluzione SaaS che automatizza la fatturazione elettronica italiana integrandosi direttamente con Stripe. Genera, firma digitalmente e invia le fatture all'SDI in automatico a ogni pagamento — zero burocrazia, zero azione manuale.",
+        photo: Fiscojet,
+        alt: "FiscoJet project",
+        link: "https://www.fiscojet.com",
     },
     {
         title: "Podernuovo by Giovanni Bulgari",
@@ -125,6 +144,9 @@ const portfolio = [
                                     <div class="project-info">
                                         <p class="project-type">{project.description}</p>
                                         <p class="project-description">{project.details}</p>
+                                        {project.link && (
+                                            <a class="project-link" href={project.link} target="_blank" rel="noopener">{project.link.replace('https://www.', '')}</a>
+                                        )}
                                     </div>
                                     <div class="project-image">
                                         <Image src={project.photo} alt={project.alt || project.title} loading="lazy" />
@@ -333,7 +355,24 @@ const portfolio = [
         font-size: 17px;
         line-height: 1.7;
         font-weight: 300;
-        margin: 0;
+        margin: 0 0 18px 0;
+    }
+
+    .project-link {
+        display: inline-block;
+        font-size: 13px;
+        font-weight: 500;
+        color: #fff;
+        opacity: 0.4;
+        text-decoration: none;
+        letter-spacing: 0.3px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        padding-bottom: 1px;
+        transition: opacity 0.2s ease;
+    }
+
+    .project-link:hover {
+        opacity: 0.85;
     }
     
     .project-image {
